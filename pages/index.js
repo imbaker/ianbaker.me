@@ -1,1 +1,1 @@
-export default() => <h1>Next branch</h1>
+export default() => <div><h1>Next branch</h1><img src="/static/me.jpg" alt="my image" /></div>

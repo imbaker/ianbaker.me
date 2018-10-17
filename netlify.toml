@@ -1,0 +1,6 @@
+[Settings]
+ID="ianbaker.me"
+
+[context.next]
+  publish = "output/"
+  command = "make publish"

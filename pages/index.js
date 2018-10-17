@@ -1,1 +1,1 @@
-export default() => <div>Next branch</div>
+export default() => <h1>Next branch</h1>

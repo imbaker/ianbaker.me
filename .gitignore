@@ -4,6 +4,7 @@ dist
 out
 
 # dependencies
+package-lock.json
 node_modules
 yarn.lock
 test/node_modules

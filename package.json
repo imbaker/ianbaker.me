@@ -1,7 +1,7 @@
 {
   "name": "ianbaker.me",
   "version": "1.0.0",
-  "description": "",
+  "description": "Personal website",
   "main": "index.js",
   "dependencies": {
     "express": "^4.16.4",

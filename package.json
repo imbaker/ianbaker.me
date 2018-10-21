@@ -4,10 +4,13 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.16.4",
-    "next": "^7.0.2",
+    "gatsby": "^2.0.28",
+    "gatsby-plugin-typography": "^2.2.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-typography": "^0.16.13",
+    "typography": "^0.16.17",
+    "typography-theme-lawton": "^0.15.10"
   },
   "devDependencies": {},
   "scripts": {

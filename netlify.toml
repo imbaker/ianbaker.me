@@ -2,5 +2,5 @@
 ID="ianbaker.me"
 
 [context.next]
-  publish = "out/"
-  command = "npm run export"
+  publish = "public/"
+  command = "gatsby build"

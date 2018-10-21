@@ -1,10 +1,9 @@
 # build output
 dist
-.next
-out
+public
 
 # dependencies
-package-lock.json
 node_modules
 yarn.lock
 test/node_modules
+package-lock.json

@@ -3,4 +3,4 @@ ID="ianbaker.me"
 
 [context.next]
   publish = "public/"
-  command = "gatsby build"
+  command = "npm install && gatsby build"

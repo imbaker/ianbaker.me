@@ -4,6 +4,13 @@ module.exports = {
     },
     plugins: [
         {
+            resolve: 'gatsby-source-filesystem',
+            options: {
+                path: `${__dirname}/data/`
+            }
+        },
+        'gatsby-transformer-json',
+        {
             resolve: 'gatsby-plugin-typography',
             options: {
                 pathToConfigModule: 'src/utils/typography.js'

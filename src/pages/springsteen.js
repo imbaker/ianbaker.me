@@ -4,14 +4,11 @@ import { graphql } from "gatsby"
 export default ({data}) => (
     <div style={{color: 'teal'}}>
         <h4>{data.allDataJson.totalCount} Concerts</h4>
-        {data.allDataJson.edges.map(({node}) => (
+        {data.allDataJson.edges.map(({node}, index) => (
             <div key={node.id}>
-                <h3>
-                    {node.id}{" "}{node.location}{" "}
-                    <span>
-                    — {node.date}
-                    </span>
-                </h3>
+                <h4>
+                    {(index+1)}. {node.date}{" "}—{" "}{node.location}
+                </h4>
             </div>
         ))}
     </div>
@@ -23,6 +20,7 @@ export const query = graphql`
             totalCount
             edges {
                 node {
+                    id
                     location
                     date(formatString: "ddd DD MMMM YYYY")
                 }

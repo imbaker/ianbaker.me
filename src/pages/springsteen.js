@@ -19,12 +19,12 @@ export default ({data}) => (
 
 export const query = graphql`
     query {
-        allDataJson {
+        allDataJson(sort: { order: ASC, fields: [date] }) {
             totalCount
             edges {
                 node {
                     location
-                    date
+                    date(formatString: "ddd DD MMMM YYYY")
                 }
             }
         }

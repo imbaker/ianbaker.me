@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import Concert from '../components/concert'
 
 export default ({ data }) => (
-  <Layout>
+  <Layout subTitle='Bruce Springsteen Concerts'>
     <div>
       <h4>{data.allDataJson.totalCount} concerts</h4>
       <table>
@@ -14,7 +14,7 @@ export default ({ data }) => (
           <th>Location</th>
         </tr>
         {data.allDataJson.edges.map(({ node }, index) => (
-          <Concert index = {index+1} date = {node.date} location = {node.location} />
+          <Concert index = { index + 1 } date = {node.date} location = {node.location} />
         ))}
       </table>
     </div>

@@ -1,20 +1,21 @@
 module.exports = {
-    siteMetadata: {
-        title: 'Ian Baker'
+  siteMetadata: {
+    title: 'Ian Baker'
+  },
+  plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/data/`
+      }
     },
-    plugins: [
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                path: `${__dirname}/src/data/`
-            }
-        },
-        'gatsby-transformer-json',
-        {
-            resolve: 'gatsby-plugin-typography',
-            options: {
-                pathToConfigModule: 'src/utils/typography.js'
-            }
-        }
-    ]
+    'gatsby-transformer-json',
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography.js'
+      }
+    },
+    'gatsby-plugin-glamor'
+  ]
 }

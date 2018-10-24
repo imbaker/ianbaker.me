@@ -13,9 +13,10 @@ export default ({ data, subTitle }) => (
       }
     `}
     render={data => (
-      <h1>
-        {data.site.siteMetadata.title} &mdash; {subTitle}
-      </h1>
+      <div>
+        <h1>{data.site.siteMetadata.title}</h1>
+        <h2>{subTitle}</h2>
+      </div>
     )}
   />
 )

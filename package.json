@@ -11,6 +11,7 @@
     "gatsby-transformer-json": "^2.1.4",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-error-overlay": "^5.0.5",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
     "typography-theme-lawton": "^0.15.10",

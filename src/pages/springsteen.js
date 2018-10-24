@@ -1,6 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
+import Concert from '../components/concert'
 
 export default ({ data }) => (
   <Layout>
@@ -13,11 +14,7 @@ export default ({ data }) => (
           <th>Location</th>
         </tr>
         {data.allDataJson.edges.map(({ node }, index) => (
-          <tr>
-            <td>{index + 1}</td>
-            <td>{node.date}</td>
-            <td>{node.location}</td>
-          </tr>
+          <Concert index = {index+1} date = {node.date} location = {node.location} />
         ))}
       </table>
     </div>

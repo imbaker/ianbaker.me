@@ -16,6 +16,13 @@ module.exports = {
         pathToConfigModule: 'src/utils/typography.js'
       }
     },
-    'gatsby-plugin-glamor'
+    'gatsby-plugin-glamor',
+    {
+      resolve: 'gatsby-plugin-google-tagmanager',
+      options: {
+        id: 'GTM-WMMDJ3N',
+        includeInDevelopment: true
+      }
+    }
   ]
 }

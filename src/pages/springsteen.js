@@ -8,14 +8,16 @@ export default ({ data }) => (
     <div>
       <h4>{data.allDataJson.totalCount} concerts</h4>
       <table>
-        <tr>
-          <th>#</th>
-          <th>Date</th>
-          <th>Location</th>
-        </tr>
-        {data.allDataJson.edges.map(({ node }, index) => (
-          <Concert index = { index + 1 } date = {node.date} location = {node.location} />
-        ))}
+        <tbody>
+          <tr>
+            <th>#</th>
+            <th>Date</th>
+            <th>Location</th>
+          </tr>
+          {data.allDataJson.edges.map(({ node }, index) => (
+            <Concert key = { node.id } index = { index + 1 } date = {node.date} location = {node.location} />
+          ))}
+        </tbody>
       </table>
     </div>
   </Layout>

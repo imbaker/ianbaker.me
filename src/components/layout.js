@@ -9,9 +9,9 @@ import Header from '../components/header'
 // Dodger Blue #1789FC
 // https://coolors.co/b1740f-ffd07b-fdb833-296eb4-1789fc
 
-export default ({ children }) => (
+export default ( props ) => (
   <div css={{ margin: '3rem auto', maxWidth: 600 }}>
-    <Header subTitle='Bruce Springsteen Concerts.' />
-    {children}
+    <Header subTitle={ props.subTitle } />
+    {props.children}
   </div>
 )

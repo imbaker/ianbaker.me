@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+.date {
+    font-weight: bold
+}
+
+.location {
+    color: '#1789FC';
+    font-style: italic
+}
+
+.concertList {
+    border: 0;
+}
+
+.concertList tr:hover {
+    background-color: #FFD07B;
+}

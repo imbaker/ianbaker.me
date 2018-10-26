@@ -9,12 +9,16 @@ html {
 }
 
 .location {
-    color: '#1789FC';
     font-style: italic
 }
 
 .concertList {
-    border: 0;
+    border-spacing: 0;
+}
+
+.concertList tbody td {
+    padding: 8px;
+    margin: 8px;
 }
 
 .concertList tr:hover {

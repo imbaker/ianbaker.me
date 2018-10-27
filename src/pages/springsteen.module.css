@@ -6,15 +6,15 @@
     font-style: italic
 }
 
-.concertList {
+table {
     border-spacing: 0;
 }
 
-.concertList tbody td {
+.concerts td {
     padding: 8px;
     margin: 8px;
 }
 
-.concertList tr:hover {
+.concerts tr:hover {
     background-color: #FFD07B;
 }

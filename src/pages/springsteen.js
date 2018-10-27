@@ -15,7 +15,7 @@ export default ({ data }) => (
   <Layout subTitle='Bruce Springsteen Concerts'>
     <div>
       <h4>{data.allDataJson.totalCount} concerts</h4>
-      <table className={styles.concertList}>
+      <table>
         <thead>
           <tr>
             <th className={styles.heading}>#</th>
@@ -23,7 +23,7 @@ export default ({ data }) => (
             <th className={styles.heading}>Location</th>
           </tr>
         </thead>  
-        <tbody>
+        <tbody className={styles.concerts}>
           {data.allDataJson.edges.map(({ node }, index) => (
             <Concert key = { node.id } index = { index + 1 } date = {node.date} location = {node.location} />
           ))}

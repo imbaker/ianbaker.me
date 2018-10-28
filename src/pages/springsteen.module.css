@@ -40,7 +40,7 @@ li.tablerow {
 }
 
 li.tablerow:hover {
-    border-left: 6px solid #d6dee0;
+    border-left-color: #d6dee0;
 }
 
 .container {

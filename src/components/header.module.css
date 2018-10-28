@@ -1,0 +1,26 @@
+.header {
+    background-color: #66b9bf;
+    color: white;
+    margin: 0;
+    padding: 12px;
+    border-bottom: 4px solid #e37222;
+}
+
+.header h1 {
+    font-family: Georgia;
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 0.03em;
+    padding-left: 40px;
+}
+
+.header h2 {
+    font-family: Georgia;
+    font-size: 24px;
+    letter-spacing: 0.03em;
+    padding-left: 40px;
+}
+
+body {
+    margin: 0;
+}

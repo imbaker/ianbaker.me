@@ -1,14 +1,22 @@
 @keyframes highlight {
-    from {background-color: #ffffff}
-    to {background-color: #ffd07b}
+    from {
+        background-color: #ffffff
+    }
+
+    to {
+        background-color: #ffd07b
+    }
 }
 
 .date {
     font-weight: bold
 }
 
-.location {
-    font-style: italic
+.location {}
+
+h4 {
+    letter-spacing: 0.03em;
+    padding-left: 40px;
 }
 
 table {
@@ -16,8 +24,10 @@ table {
 }
 
 th {
-    color: #ffffff;
     background-color: #aaaaaa;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 4px;
 }
 
 .concerts td {
@@ -25,7 +35,97 @@ th {
     margin: 8px;
 }
 
-.concerts tr:hover {
-    animation-name: highlight;
-    animation-duration: 1s;
+li {
+    border-left: 5px solid #ffffff;
+}
+
+li:hover {
+    /* animation-name: highlight;
+    animation-duration: 1s; */
+    background-color: #ffd07b;
+    border-left: 5px solid #d6dee0;
+}
+
+.container {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.responsivetable li {
+    border-radius: 3px;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.responsivetable .tableheader {
+    background-color: #95A5A6;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.responsivetable .tablerow {
+    background-color: #ffffff;
+    box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+
+.col {
+    display: flex;
+    padding: 10px 0;
+}
+
+.col :before {
+    color: #6C7A89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 90%;
+    text-align: left;
+}
+
+.col1 {
+    composes: col;
+    flex-basis: 10%;
+}
+
+.col-2 {
+    composes: col;
+    flex-basis: 30%;
+}
+
+.col-3 {
+    composes: col;
+    flex-basis: 50%;
+}
+
+@media all and (max-width: 767px) {
+    /* .tableheader {
+        display: none;
+      }
+      .tablerow{
+        
+      }
+      li {
+        display: block;
+      }
+      .col {
+        
+        flex-basis: 100%;
+        
+      }
+      .col {
+        display: flex;
+        padding: 10px 0;
+        &:before {
+          color: #6C7A89;
+          padding-right: 10px;
+          content: attr(data-label);
+          flex-basis: 50%;
+          text-align: right;
+        }
+      }
+    } */
 }

@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 
 html {
+  color: #333333;
   font-family: 'Roboto', sans-serif;
-  color: #111111
+  font-size: 1.3rem;
 }
 
 .container {
   margin: 3rem auto;
-  max-width: 600px;
+  max-width: 1000px;
 }
 

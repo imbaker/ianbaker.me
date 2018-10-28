@@ -35,15 +35,12 @@ th {
     margin: 8px;
 }
 
-li {
+.tablerow li {
     border-left: 5px solid #ffffff;
 }
 
-li:hover {
-    /* animation-name: highlight;
-    animation-duration: 1s; */
-    background-color: #ffd07b;
-    border-left: 5px solid #d6dee0;
+li.tablerow:hover {
+    border-left: 8px solid #d6dee0;
 }
 
 .container {

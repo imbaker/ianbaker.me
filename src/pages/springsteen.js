@@ -18,9 +18,9 @@ export default ({ data }) => (
       <table>
         <thead>
           <tr>
-            <th className={styles.heading}>#</th>
-            <th className={styles.heading}>Date</th>
-            <th className={styles.heading}>Location</th>
+            <th>#</th>
+            <th>Date</th>
+            <th>Location</th>
           </tr>
         </thead>  
         <tbody className={styles.concerts}>

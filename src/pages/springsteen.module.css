@@ -1,3 +1,8 @@
+@keyframes highlight {
+    from {background-color: #ffffff}
+    to {background-color: #ffd07b}
+}
+
 .date {
     font-weight: bold
 }
@@ -10,11 +15,17 @@ table {
     border-spacing: 0;
 }
 
+th {
+    color: #ffffff;
+    background-color: #aaaaaa;
+}
+
 .concerts td {
     padding: 8px;
     margin: 8px;
 }
 
 .concerts tr:hover {
-    background-color: #FFD07B;
+    animation-name: highlight;
+    animation-duration: 1s;
 }

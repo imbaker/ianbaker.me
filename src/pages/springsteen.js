@@ -14,7 +14,7 @@ const Concert = props => (
 export default ({ data }) => (
   <Layout subTitle='Bruce Springsteen Concerts'>
     <div className={styles.container}>
-      <h4>{data.allDataJson.totalCount} concerts</h4>
+      <h3>{data.allDataJson.totalCount} concerts</h3>
       <ul className={styles.responsivetable}>
         <li className={styles.tableheader}>
             <div className={styles.col1}>#</div>

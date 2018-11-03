@@ -12,8 +12,10 @@ import Header from '../components/header'
 // https://coolors.co/b1740f-ffd07b-fdb833-296eb4-1789fc
 
 export default (props) => (
-  <div className={styles.container}>
+  <div>
     <Header subTitle={ props.subTitle } />
-    {props.children}
+    <div className={styles.container}>
+      {props.children}
+    </div>
   </div>
 )

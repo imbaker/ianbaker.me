@@ -1,0 +1,6 @@
+[Settings]
+ID="ianbaker.me"
+
+[context.next]
+  publish = "public/"
+  command = "npm install && gatsby build"

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+html {
+  font-family: 'Lato', sans-serif;
+  color: #111111
+}
+
+.container {
+  margin: 3rem auto;
+  max-width: 1000px;
+}
+

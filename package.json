@@ -1,0 +1,47 @@
+{
+  "name": "ianbaker.me",
+  "version": "1.0.0",
+  "description": "Personal website",
+  "main": "index.js",
+  "dependencies": {
+    "gatsby": "^2.0.28",
+    "gatsby-cli": "^2.4.3",
+    "gatsby-plugin-glamor": "^2.0.5",
+    "gatsby-plugin-google-tagmanager": "^2.0.5",
+    "gatsby-plugin-typography": "^2.2.0",
+    "gatsby-source-filesystem": "^2.0.5",
+    "gatsby-transformer-json": "^2.1.4",
+    "glamor": "^2.20.40",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-error-overlay": "^5.0.5",
+    "react-typography": "^0.16.13",
+    "typography": "^0.16.17",
+    "typography-theme-lawton": "^0.15.10",
+    "typography-theme-st-annes": "^0.15.10"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0"
+  },
+  "scripts": {
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "export": "npm run build && next export"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imbaker/ianbaker.me.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imbaker/ianbaker.me/issues"
+  },
+  "homepage": "https://github.com/imbaker/ianbaker.me#readme"
+}

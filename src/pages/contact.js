@@ -2,7 +2,6 @@ import React from 'react'
 import Layout from '../components/layout'
 
 export default () => (
-  <Layout subTitle='Contact'>
     <form name="contact" method="POST" action="/success" data-netlify="true">
       <p>
         <label>Your Name: <input type="text" name="name" /></label>
@@ -17,5 +16,4 @@ export default () => (
         <button type="submit">Send</button>
       </p>
     </form>
-  </Layout>
 )

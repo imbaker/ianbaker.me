@@ -29,6 +29,14 @@ th {
     padding: 4px;
 }
 
+ul.songs {
+    margin-bottom: 16px;
+}
+
+ul.songs li {
+    display: inline;
+}
+
 .concerts td {
     padding: 8px;
     margin: 8px;

@@ -13,10 +13,9 @@ const Concert = props => (
 
 const Songs = props => (
   <ul className={styles.songs}>
-    <li key={ props.songs[0].key }>{ props.songs[0].song_title.text }</li>
-    <li key={ props.songs[1].key }>{ props.songs[1].song_title.text }</li>
-    <li key={ props.songs[2].key }>{ props.songs[2].song_title.text }</li>
-    <li key={ props.songs[3].key }>{ props.songs[3].song_title.text }</li>
+    {props.songs.map(function (song) {
+      return <li key={ song.key }>{ song.song_title.text }</li>;
+    })}
   </ul>
 )
 

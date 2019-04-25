@@ -10,6 +10,7 @@
     "gatsby-plugin-google-tagmanager": "^2.0.5",
     "gatsby-plugin-typography": "^2.2.0",
     "gatsby-source-filesystem": "^2.0.5",
+    "gatsby-source-prismic": "^2.1.0",
     "gatsby-transformer-json": "^2.1.4",
     "glamor": "^2.20.40",
     "react": "^16.5.2",
@@ -21,6 +22,7 @@
     "typography-theme-st-annes": "^0.15.10"
   },
   "devDependencies": {
+    "dotenv": "^6.1.0",
     "eslint": "^5.7.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",

@@ -1,3 +1,7 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
   siteMetadata: {
     title: 'Ian Baker'
@@ -7,6 +11,13 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/src/data/`
+      }
+    },
+    {
+      resolve: 'gatsby-source-prismic',
+      options: {
+        repositoryName: 'ian-bakers-website',
+        accessToken: `${process.env.API_KEY}`
       }
     },
     'gatsby-transformer-json',
@@ -21,7 +32,7 @@ module.exports = {
       resolve: 'gatsby-plugin-google-tagmanager',
       options: {
         id: 'GTM-WMMDJ3N',
-        includeInDevelopment: false
+        includeInDevelopment: true
       }
     }
   ]

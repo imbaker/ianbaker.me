@@ -64,7 +64,7 @@ ul.responsivetable {
 
 .responsivetable li {
     border-radius: 3px;
-    padding: 15px 30px;
+    padding: 5px 20px;
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
@@ -104,12 +104,17 @@ ul.responsivetable {
 
 .col-2 {
     composes: col;
-    flex-basis: 30%;
+    flex-basis: 25%;
 }
 
 .col-3 {
     composes: col;
-    flex-basis: 50%;
+    flex-basis: 35%;
+}
+
+.col-4 {
+    composes: col;
+    flex-basis: 25%;
 }
 
 @media all and (max-width: 767px) {

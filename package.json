@@ -16,6 +16,8 @@
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-error-overlay": "^5.0.5",
+    "react-hot-keys": "^2.1.0",
+    "react-pose": "^4.0.2",
     "react-typography": "^0.16.13",
     "typography": "^0.16.17",
     "typography-theme-lawton": "^0.15.10",

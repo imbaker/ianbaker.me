@@ -1,0 +1,6 @@
+[build]
+  command = "astro build"
+  publish = "dist"
+
+[context.production.environment]
+  NODE_VERSION = 16

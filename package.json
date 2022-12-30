@@ -4,7 +4,7 @@
   "description": "Personal website",
   "main": "index.js",
   "dependencies": {
-    "gatsby": "^2.0.28",
+    "gatsby": "^2.32.13",
     "gatsby-cli": "^2.4.3",
     "gatsby-plugin-glamor": "^2.0.5",
     "gatsby-plugin-google-tagmanager": "^2.0.5",

@@ -16,5 +16,6 @@
     "astro": "^4.16.15",
     "@astrojs/check": "^0.9.4",
     "typescript": "^5.7.2"
-  }
+  },
+  "packageManager": "pnpm@9.14.2"
 }

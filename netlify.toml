@@ -1,6 +1,0 @@
-[Settings]
-ID="ianbaker.me"
-
-[context.next]
-  publish = "public/"
-  command = "node ./scripts/create-env.js && npm install && gatsby build"

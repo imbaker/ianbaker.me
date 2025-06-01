@@ -1,0 +1,88 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+
+const concerts = await getCollection('concerts');
+---
+
+<Layout>
+  <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Concerts</h1>
+  <div class="overflow-x-auto">
+    <table
+      class="min-w-full border border-gray-200 rounded-lg shadow-sm bg-white">
+      <colgroup>
+        <col style="width: 50px;" />
+        <col style="width: 120px;" />
+        <col style="width: 350px;" />
+        <col style="width: 120px;" />
+      </colgroup>
+      <thead>
+        <tr class="bg-gray-50">
+          <th class="py-3 px-4 text-left font-semibold text-gray-700 border-b"
+            >#</th
+          >
+          <th class="py-3 px-4 text-left font-semibold text-gray-700 border-b"
+            >Date</th
+          >
+          <th class="py-3 px-4 text-left font-semibold text-gray-700 border-b"
+            >Venue</th
+          >
+          <th class="py-3 px-4 text-left font-semibold text-gray-700 border-b"
+            >Setlist</th
+          >
+        </tr>
+      </thead>
+      <tbody>
+        {
+          concerts.map((concert, idx) => (
+            <>
+              <tr class="hover:bg-gray-50 transition">
+                <td class="py-3 px-4 border-b font-mono text-gray-400">
+                  {idx + 1}
+                </td>
+                <td class="py-3 px-4 border-b text-gray-700">
+                  {new Date(concert.data.date).toLocaleDateString()}
+                </td>
+                <td class="py-3 px-4 border-b text-gray-700">
+                  {concert.data.venue.name}, {concert.data.venue.city},{' '}
+                  {concert.data.venue.country}
+                </td>
+                <td class="py-3 px-4 border-b">
+                  <button
+                    type="button"
+                    onclick={`document.getElementById('setlist-row-${idx}').classList.toggle('hidden')`}
+                    class="px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium transition"
+                    aria-controls={`setlist-row-${idx}`}
+                    aria-expanded="false">
+                    View
+                  </button>
+                </td>
+              </tr>
+              <tr id={`setlist-row-${idx}`} class="hidden">
+                <td colspan="3" class="p-0 bg-gray-50">
+                  <ul class="w-full px-8 py-4 text-gray-600 text-base">
+                    {concert.data.songs &&
+                      concert.data.songs.map((song, index) => (
+                        <li class="mb-1">
+                          <span class="font-mono text-gray-400">
+                            {index + 1}.
+                          </span>{' '}
+                          {song.title}
+                        </li>
+                      ))}
+                  </ul>
+                </td>
+              </tr>
+            </>
+          ))
+        }
+      </tbody>
+    </table>
+  </div>
+</Layout>
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>

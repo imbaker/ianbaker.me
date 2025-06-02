@@ -41,7 +41,7 @@ const concerts = await getCollection('concerts');
                   {idx + 1}
                 </td>
                 <td class="py-3 px-4 border-b text-gray-700">
-                  {new Date(concert.data.date).toLocaleDateString()}
+                  {new Date(concert.data.date).toLocaleDateString('en-GB')}
                 </td>
                 <td class="py-3 px-4 border-b text-gray-700">
                   {concert.data.venue.name}, {concert.data.venue.city},{' '}

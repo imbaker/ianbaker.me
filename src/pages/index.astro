@@ -37,17 +37,20 @@ const concerts = await getCollection('concerts');
           concerts.map((concert, idx) => (
             <>
               <tr class="hover:bg-gray-50 transition">
-                <td class="py-3 px-4 border-b font-mono text-gray-400">
+                <td class="py-3 px-4 border-b font-mono text-2xl text-gray-400 align-text-top mt-4">
                   {idx + 1}
                 </td>
-                <td class="py-3 px-4 border-b text-gray-700">
+                <td class="py-3 px-4 border-b text-gray-700 align-text-top">
                   {new Date(concert.data.date).toLocaleDateString('en-GB')}
                 </td>
-                <td class="py-3 px-4 border-b text-gray-700">
-                  {concert.data.venue.name}, {concert.data.venue.city},{' '}
-                  {concert.data.venue.country}
+                <td class="py-2 px-4 border-b text-gray-700 align-text-top">
+                  <span class="">{concert.data.venue.name}</span>
+                  <br />
+                  <span class="text-gray-400 text-sm italic ">
+                    {concert.data.venue.city}, {concert.data.venue.country}
+                  </span>
                 </td>
-                <td class="py-3 px-4 border-b">
+                <td class="py-3 px-4 border-b align-text-top">
                   <button
                     type="button"
                     onclick={`document.getElementById('setlist-row-${idx}').classList.toggle('hidden')`}

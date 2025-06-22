@@ -12,8 +12,7 @@ const concerts = await getCollection('concerts');
       class="table-auto border border-gray-200 rounded-lg shadow-sm bg-white">
       <thead>
         <tr class="bg-gray-50">
-          <th
-            class="py-2 px-4 text-left font-semibold text-gray-700 border-b text-center"
+          <th class="py-2 px-4 font-semibold text-gray-700 border-b text-center"
             >#</th
           >
           <th class="py-2 px-4 text-left font-semibold text-gray-700 border-b"
@@ -32,10 +31,10 @@ const concerts = await getCollection('concerts');
           concerts.map((concert, idx) => (
             <>
               <tr class="hover:bg-gray-50 transition">
-                <td class="py-2 px-2 border-b font-mono text-2xl text-gray-50 bg-gray-400 align-text-middle text-center">
+                <td class="py-2 px-2 border-b font-mono text-3xl text-gray-50 bg-gray-400 align-text-middle text-center">
                   {idx + 1}
                 </td>
-                <td class="py-2 px-4 border-b text-gray-700 align-text-top">
+                <td class="py-2 px-4 border-b text-gray-700 align-text-middle">
                   {new Date(concert.data.date).toLocaleDateString('en-GB')}
                 </td>
                 <td class="py-2 px-4 border-b text-gray-700 align-text-top">
@@ -45,7 +44,7 @@ const concerts = await getCollection('concerts');
                     {concert.data.venue.city}, {concert.data.venue.country}
                   </span>
                 </td>
-                <td class="py-2 px-4 border-b align-text-top">
+                <td class="py-2 px-4 border-b align-text-middle">
                   <button
                     type="button"
                     onclick={`document.getElementById('setlist-row-${idx}').classList.toggle('hidden')`}
@@ -57,7 +56,7 @@ const concerts = await getCollection('concerts');
                 </td>
               </tr>
               <tr id={`setlist-row-${idx}`} class="hidden">
-                <td colspan="3" class="p-0 bg-gray-50">
+                <td colspan="4" class="p-0 bg-gray-50">
                   <ul class="w-full px-8 py-4 text-gray-600 text-base">
                     {concert.data.songs &&
                       concert.data.songs.map((song, index) => (

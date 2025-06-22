@@ -6,7 +6,7 @@ const concerts = await getCollection('concerts');
 ---
 
 <Layout>
-  <h1 class="text-3xl font-bold mb-8 text-center text-gray-800">Concerts</h1>
+  <h1 class="text-3xl font-bold text-center text-gray-800">Concerts</h1>
   <div>
     <table
       class="table-auto border border-gray-200 rounded-lg shadow-sm bg-white">
@@ -31,7 +31,7 @@ const concerts = await getCollection('concerts');
           concerts.map((concert, idx) => (
             <>
               <tr class="hover:bg-gray-50 transition">
-                <td class="py-3 px-4 border-b font-mono text-2xl text-gray-400 align-text-top mt-4">
+                <td class="py-3 px-4 border-b font-mono text-2xl text-gray-400 align-text-top">
                   {idx + 1}
                 </td>
                 <td class="py-3 px-4 border-b text-gray-700 align-text-top">

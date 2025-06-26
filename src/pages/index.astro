@@ -32,20 +32,20 @@ const concerts = await getCollection('concerts');
           concerts.map((concert, idx) => (
             <>
               <tr class="hover:bg-gray-50 transition">
-                <td class="py-2 px-2 border-b font-mono text-3xl text-gray-50 bg-gray-400 align-text-middle text-center">
+                <td class="py-2 px-2 border-b font-mono text-3xl text-gray-50 bg-gray-400 text-center">
                   {idx + 1}
                 </td>
-                <td class="py-2 px-4 border-b text-gray-700 align-text-middle">
+                <td class="py-2 px-4 border-b text-gray-700">
                   {new Date(concert.data.date).toLocaleDateString('en-GB')}
                 </td>
-                <td class="py-2 px-4 border-b text-gray-700 align-text-top">
+                <td class="py-2 px-4 border-b text-gray-700">
                   <span>{concert.data.venue.name.replace("'", '’')}</span>
                   <br />
                   <span class="text-gray-400 text-sm italic ">
                     {concert.data.venue.city}, {concert.data.venue.country}
                   </span>
                 </td>
-                <td class="py-2 px-4 border-b align-text-middle">
+                <td class="py-2 px-4 border-b">
                   <button
                     type="button"
                     onclick={`document.getElementById('setlist-row-${idx}').classList.toggle('hidden')`}
@@ -65,7 +65,7 @@ const concerts = await getCollection('concerts');
                           <span class="font-mono text-gray-400">
                             {index + 1}.
                           </span>{' '}
-                          {song.title}
+                          {song.title.replace("'", '’')}
                         </li>
                       ))}
                   </ul>

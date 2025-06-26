@@ -1,27 +1,28 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
+import { containsServerDirective } from 'astro/runtime/server/render/server-islands.js';
 
 const concerts = await getCollection('concerts');
 ---
 
 <Layout>
-  <h1 class="text-3xl font-bold text-center text-gray-800">Concerts</h1>
+  <h1 class="text-3xl font-bold text-center text-gray-800 mb-3">Concerts</h1>
   <div>
     <table
       class="table-auto border border-gray-200 rounded-lg shadow-sm bg-white">
       <thead>
         <tr class="bg-gray-50">
-          <th class="py-2 px-4 font-semibold text-gray-700 border-b text-center"
+          <th class="py-2 px-4 font-bold text-gray-700 border-b text-center"
             >#</th
           >
-          <th class="py-2 px-4 text-left font-semibold text-gray-700 border-b"
+          <th class="py-2 px-4 text-left font-bold text-gray-700 border-b"
             >Date</th
           >
-          <th class="py-2 px-4 text-left font-semibold text-gray-700 border-b"
+          <th class="py-2 px-4 text-left font-bold text-gray-700 border-b"
             >Venue</th
           >
-          <th class="py-2 px-4 text-left font-semibold text-gray-700 border-b"
+          <th class="py-2 px-4 text-left font-bold text-gray-700 border-b"
             >Setlist</th
           >
         </tr>
@@ -38,7 +39,7 @@ const concerts = await getCollection('concerts');
                   {new Date(concert.data.date).toLocaleDateString('en-GB')}
                 </td>
                 <td class="py-2 px-4 border-b text-gray-700 align-text-top">
-                  <span class="">{concert.data.venue.name}</span>
+                  <span>{concert.data.venue.name.replace("'", '’')}</span>
                   <br />
                   <span class="text-gray-400 text-sm italic ">
                     {concert.data.venue.city}, {concert.data.venue.country}

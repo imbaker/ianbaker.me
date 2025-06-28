@@ -48,7 +48,12 @@ const concerts = await getCollection('concerts');
                 <td class="py-2 px-4 border-b">
                   <button
                     type="button"
-                    onclick={`document.getElementById('setlist-row-${idx}').classList.toggle('hidden')`}
+                    onclick={`
+                      const row = document.getElementById('setlist-row-${idx}');
+                      const btn = this;
+                      row.classList.toggle('hidden');
+                      btn.setAttribute('aria-expanded', !row.classList.contains('hidden'));
+                      `}
                     class="px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium transition"
                     aria-controls={`setlist-row-${idx}`}
                     aria-expanded="false">
@@ -78,9 +83,3 @@ const concerts = await getCollection('concerts');
     </table>
   </div>
 </Layout>
-
-<style>
-  .hidden {
-    display: none;
-  }
-</style>

@@ -12,20 +12,20 @@ const { concert, index } = Astro.props;
 <div>
   <tr class="hover:bg-gray-50 transition">
     <td
-      class="py-2 px-2 border-b font-mono text-3xl text-gray-50 bg-gray-400 text-center">
+      class="py-2 px-3 border-b font-mono text-3xl text-gray-50 bg-gray-400 text-center">
       {index + 1}
     </td>
-    <td class="py-2 px-4 border-b text-gray-700">
+    <td class="py-2 px-3 border-b text-gray-700">
       <FormattedDate date={concert.data.date} />
     </td>
-    <td class="py-2 px-4 border-b text-gray-700">
+    <td class="py-2 px-3 border-b text-gray-700">
       <span>{concert.data.venue.name.replace("'", '’')}</span>
       <br />
       <span class="text-gray-400 text-sm italic">
         {concert.data.venue.city}, {concert.data.venue.country}
       </span>
     </td>
-    <td class="py-2 px-4 border-b">
+    <td class="py-2 px-3 border-b">
       <button
         type="button"
         onclick={`
@@ -33,8 +33,9 @@ const { concert, index } = Astro.props;
           const btn = this;
           row.classList.toggle('hidden');
           btn.setAttribute('aria-expanded', !row.classList.contains('hidden'));
+          btn.textContent = row.classList.contains('hidden') ? 'View' : 'Hide';
           `}
-        class="px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium transition"
+        class="px-3 py-1 w-16 rounded bg-gray-100 hover:bg-gray-200 hover:font-bold text-gray-700 text-sm transition"
         aria-controls={`setlist-row-${index}`}
         aria-expanded="false">
         View

@@ -1,13 +1,7 @@
 ---
-const today = new Date();
+const currentYear = new Date().getFullYear();
 ---
 
-<footer>
-  &copy; {today.getFullYear()} Ian Baker. All rights reserved.
+<footer class="mt-6 text-center text-sm text-gray-500">
+  &copy; {currentYear} Ian Baker. All rights reserved.
 </footer>
-<style>
-  footer {
-    padding: 25px;
-    text-align: center;
-  }
-</style>

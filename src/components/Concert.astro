@@ -1,4 +1,6 @@
 ---
+import FormattedDate from './FormattedDate.astro';
+
 export interface Props {
   concert: Concert;
   index: number;
@@ -14,7 +16,7 @@ const { concert, index } = Astro.props;
       {index + 1}
     </td>
     <td class="py-2 px-4 border-b text-gray-700">
-      {new Date(concert.data.date).toLocaleDateString('en-GB')}
+      <FormattedDate date={concert.data.date} />
     </td>
     <td class="py-2 px-4 border-b text-gray-700">
       <span>{concert.data.venue.name.replace("'", '’')}</span>

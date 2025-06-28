@@ -1,0 +1,57 @@
+---
+export interface Props {
+  concert: Concert;
+  index: number;
+}
+
+const { concert, index } = Astro.props;
+---
+
+<div>
+  <tr class="hover:bg-gray-50 transition">
+    <td
+      class="py-2 px-2 border-b font-mono text-3xl text-gray-50 bg-gray-400 text-center">
+      {index + 1}
+    </td>
+    <td class="py-2 px-4 border-b text-gray-700">
+      {new Date(concert.data.date).toLocaleDateString('en-GB')}
+    </td>
+    <td class="py-2 px-4 border-b text-gray-700">
+      <span>{concert.data.venue.name.replace("'", '’')}</span>
+      <br />
+      <span class="text-gray-400 text-sm italic">
+        {concert.data.venue.city}, {concert.data.venue.country}
+      </span>
+    </td>
+    <td class="py-2 px-4 border-b">
+      <button
+        type="button"
+        onclick={`
+          const row = document.getElementById('setlist-row-${index}');
+          const btn = this;
+          row.classList.toggle('hidden');
+          btn.setAttribute('aria-expanded', !row.classList.contains('hidden'));
+          `}
+        class="px-3 py-1 rounded bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm font-medium transition"
+        aria-controls={`setlist-row-${index}`}
+        aria-expanded="false">
+        View
+      </button>
+    </td>
+  </tr>
+  <tr id={`setlist-row-${index}`} class="hidden">
+    <td colspan="4" class="p-0 bg-gray-50">
+      <ul class="w-full px-8 py-4 text-gray-600 text-base">
+        {
+          concert.data.songs &&
+            concert.data.songs.map((song: { title: string }, index: number) => (
+              <li class="mb-1">
+                <span class="font-mono text-gray-400">{index + 1}.</span>{' '}
+                {song.title.replace("'", '’')}
+              </li>
+            ))
+        }
+      </ul>
+    </td>
+  </tr>
+</div>

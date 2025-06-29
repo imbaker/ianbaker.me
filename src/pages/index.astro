@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import { containsServerDirective } from 'astro/runtime/server/render/server-islands.js';
 import Concert from '../components/Concert.astro';
 
 const concerts = await getCollection('concerts');

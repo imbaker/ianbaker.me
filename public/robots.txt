@@ -2,4 +2,4 @@ User-agent: *
 Disallow: /alive
 Allow: /
 
-Sitemap: https://ianbaker.me/sitemap-index.xml
+Sitemap: https://ianbaker.me/sitemap-0.xml

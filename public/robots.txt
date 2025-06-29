@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /alive
+Allow: /
+
+Sitemap: https://ianbaker.me/sitemap-index.xml

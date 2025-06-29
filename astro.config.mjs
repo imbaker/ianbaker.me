@@ -1,13 +1,15 @@
 import { defineConfig, fontProviders } from 'astro/config';
-import mdx from '@astrojs/mdx';
 import sitemap from '@astrojs/sitemap';
-
 import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://example.com',
-  integrations: [mdx(), sitemap(), tailwind()],
+  site: 'https://ianbaker.me',
+  integrations: [
+    sitemap({
+      filter: (page) => page !== page.pathname.startsWith('/alive/') // Exclude healthcheck pages
+    }),
+    tailwind()],
   experimental: {
     fonts: [
       {

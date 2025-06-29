@@ -7,7 +7,7 @@ export default defineConfig({
   site: 'https://ianbaker.me',
   integrations: [
     sitemap({
-      filter: (page) => page !== page.pathname.startsWith('/alive/') // Exclude healthcheck pages
+      filter: (page) => page !== 'https://ianbaker.me/alive/' // Exclude healthcheck pages
     }),
     tailwind()],
   experimental: {

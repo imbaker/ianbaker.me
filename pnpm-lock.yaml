@@ -13,10 +13,10 @@ importers:
         version: 3.4.1
       '@astrojs/tailwind':
         specifier: ^6.0.2
-        version: 6.0.2(astro@5.10.1(@types/node@24.0.7)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0))(tailwindcss@3.4.17)
+        version: 6.0.2(astro@5.10.2(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0))(tailwindcss@3.4.17)
       astro:
-        specifier: ^5.10.1
-        version: 5.10.1(@types/node@24.0.7)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0)
+        specifier: ^5.10.2
+        version: 5.10.2(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0)
       tailwindcss:
         specifier: ^3.4.17
         version: 3.4.17
@@ -339,23 +339,18 @@ packages:
     resolution: {integrity: sha512-O8jcjabXaleOG9DQ0+ARXWZBTfnP4WNAqzuiJK7ll44AmxGKv/J2M4TPjxjY3znBCfvBXFzucm1twdyFybFqEA==}
     engines: {node: '>=12'}
 
-  '@jridgewell/gen-mapping@0.3.8':
-    resolution: {integrity: sha512-imAbBGkb+ebQyxKgzv5Hu2nmROxoDOXHh80evxdoXNOrvAnVx7zimzc1Oo5h9RlfV4vPXaE2iM5pOFbvOCClWA==}
-    engines: {node: '>=6.0.0'}
+  '@jridgewell/gen-mapping@0.3.12':
+    resolution: {integrity: sha512-OuLGC46TjB5BbN1dH8JULVVZY4WTdkF7tV9Ys6wLL1rubZnCMstOhNHueU5bLCrnRuDhKPDM4g6sw4Bel5Gzqg==}
 
   '@jridgewell/resolve-uri@3.1.2':
     resolution: {integrity: sha512-bRISgCIjP20/tbWSPWMEi54QVPRZExkuD9lJL+UIxUKtwVJA8wW1Trb1jMs1RFXo1CBTNZ/5hpC9QvmKWdopKw==}
     engines: {node: '>=6.0.0'}
 
-  '@jridgewell/set-array@1.2.1':
-    resolution: {integrity: sha512-R8gLRTZeyp03ymzP/6Lil/28tGeGEzhx1q2k703KGWRAI1VdvPIXdG70VJc2pAMw3NA6JKL5hhFu1sJX0Mnn/A==}
-    engines: {node: '>=6.0.0'}
+  '@jridgewell/sourcemap-codec@1.5.4':
+    resolution: {integrity: sha512-VT2+G1VQs/9oz078bLrYbecdZKs912zQlkelYpuf+SXF+QvZDYJlbx/LSx+meSAwdDFnF8FVXW92AVjjkVmgFw==}
 
-  '@jridgewell/sourcemap-codec@1.5.0':
-    resolution: {integrity: sha512-gv3ZRaISU3fjPAgNsriBRqGWQL6quFx04YMPW/zD8XMLsU32mhCCbfbO6KZFLjvYpCZ8zyDEgqsgf+PwPaM7GQ==}
-
-  '@jridgewell/trace-mapping@0.3.25':
-    resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
+  '@jridgewell/trace-mapping@0.3.29':
+    resolution: {integrity: sha512-uw6guiW/gcAGPDhLmd77/6lW8QLeiV5RUTsAX46Db6oLhGaVj4lhnPwb184s1bkc8kdVg/+h988dro8GRDpmYQ==}
 
   '@nodelib/fs.scandir@2.1.5':
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
@@ -533,8 +528,8 @@ packages:
   '@types/node@17.0.45':
     resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
 
-  '@types/node@24.0.7':
-    resolution: {integrity: sha512-YIEUUr4yf8q8oQoXPpSlnvKNVKDQlPMWrmOcgzoduo7kvA2UF0/BwJ/eMKFTiTtkNL17I0M6Xe2tvwFU7be6iw==}
+  '@types/node@24.0.10':
+    resolution: {integrity: sha512-ENHwaH+JIRTDIEEbDK6QSQntAYGtbvdDXnMXnZaZ6k13Du1dPMmprkEHIL7ok2Wl2aZevetwTAb5S+7yIF+enA==}
 
   '@types/sax@1.2.7':
     resolution: {integrity: sha512-rO73L89PJxeYM3s3pPPjiPgVVcymqU490g0YO5n5By0k2Erzj6tay/4lr1CHAAU4JyOWd1rpQ8bCf6cZfHU96A==}
@@ -589,8 +584,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@5.10.1:
-    resolution: {integrity: sha512-DJVmt+51jU1xmgmAHCDwuUgcG/5aVFSU+tcX694acAZqPVt8EMUAmUZcJDX36Z7/EztnPph9HR3pm72jS2EgHQ==}
+  astro@5.10.2:
+    resolution: {integrity: sha512-CCBU+e/Apk6NWEMnc/R9dVZD/+FaCnNqWJicX1Oe6T18vLKop+LPs/m/88ekJk4zxP1g1N/GfUq4wEedUSk1Wg==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -800,8 +795,8 @@ packages:
   eastasianwidth@0.2.0:
     resolution: {integrity: sha512-I88TYZWc9XiYHRQ4/3c5rjjfgkjhLyW2luGIheGERbNQ6OY7yTybanSpDXZa8y7VUP9YmDcYa+eyq4ca7iLqWA==}
 
-  electron-to-chromium@1.5.177:
-    resolution: {integrity: sha512-7EH2G59nLsEMj97fpDuvVcYi6lwTcM1xuWw3PssD8xzboAW7zj7iB3COEEEATUfjLHrs5uKBLQT03V/8URx06g==}
+  electron-to-chromium@1.5.178:
+    resolution: {integrity: sha512-wObbz/ar3Bc6e4X5vf0iO8xTN8YAjN/tgiAOJLr7yjYFtP9wAjq8Mb5h0yn6kResir+VYx2DXBj9NNobs0ETSA==}
 
   emoji-regex@10.4.0:
     resolution: {integrity: sha512-EC+0oUMY1Rqm4O6LLrgjtYDvcVYTy7chDnM4Q7030tP4Kwj3u/pR6gP9ygnp2CJMK5Gq+9Q2oqmrFJAz01DXjw==}
@@ -1502,8 +1497,8 @@ packages:
     engines: {node: '>=14.0.0', npm: '>=6.0.0'}
     hasBin: true
 
-  smol-toml@1.4.0:
-    resolution: {integrity: sha512-IMxaDA/58wBvkvX77ykQ6e9r6fjs8xbxpz8bMCyVQ/fEFWbA5uJrnaVwDuhLrrANGdd7apRyTPDBvI893Bxu9g==}
+  smol-toml@1.4.1:
+    resolution: {integrity: sha512-CxdwHXyYTONGHThDbq5XdwbFsuY4wlClRGejfE2NtwUtiHYsP1QtNsHb/hnj31jKYSchztJsaA8pSQoVzkfCFg==}
     engines: {node: '>= 18'}
 
   source-map-js@1.2.1:
@@ -1884,7 +1879,7 @@ snapshots:
       remark-rehype: 11.1.2
       remark-smartypants: 3.0.2
       shiki: 3.7.0
-      smol-toml: 1.4.0
+      smol-toml: 1.4.1
       unified: 11.0.5
       unist-util-remove-position: 5.0.0
       unist-util-visit: 5.0.0
@@ -1903,9 +1898,9 @@ snapshots:
       stream-replace-string: 2.0.0
       zod: 3.25.67
 
-  '@astrojs/tailwind@6.0.2(astro@5.10.1(@types/node@24.0.7)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0))(tailwindcss@3.4.17)':
+  '@astrojs/tailwind@6.0.2(astro@5.10.2(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0))(tailwindcss@3.4.17)':
     dependencies:
-      astro: 5.10.1(@types/node@24.0.7)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0)
+      astro: 5.10.2(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0)
       autoprefixer: 10.4.21(postcss@8.5.6)
       postcss: 8.5.6
       postcss-load-config: 4.0.2(postcss@8.5.6)
@@ -2110,22 +2105,19 @@ snapshots:
       wrap-ansi: 8.1.0
       wrap-ansi-cjs: wrap-ansi@7.0.0
 
-  '@jridgewell/gen-mapping@0.3.8':
+  '@jridgewell/gen-mapping@0.3.12':
     dependencies:
-      '@jridgewell/set-array': 1.2.1
-      '@jridgewell/sourcemap-codec': 1.5.0
-      '@jridgewell/trace-mapping': 0.3.25
+      '@jridgewell/sourcemap-codec': 1.5.4
+      '@jridgewell/trace-mapping': 0.3.29
 
   '@jridgewell/resolve-uri@3.1.2': {}
 
-  '@jridgewell/set-array@1.2.1': {}
+  '@jridgewell/sourcemap-codec@1.5.4': {}
 
-  '@jridgewell/sourcemap-codec@1.5.0': {}
-
-  '@jridgewell/trace-mapping@0.3.25':
+  '@jridgewell/trace-mapping@0.3.29':
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.4
 
   '@nodelib/fs.scandir@2.1.5':
     dependencies:
@@ -2257,7 +2249,7 @@ snapshots:
 
   '@types/fontkit@2.0.8':
     dependencies:
-      '@types/node': 24.0.7
+      '@types/node': 24.0.10
 
   '@types/hast@3.0.4':
     dependencies:
@@ -2275,7 +2267,7 @@ snapshots:
 
   '@types/node@17.0.45': {}
 
-  '@types/node@24.0.7':
+  '@types/node@24.0.10':
     dependencies:
       undici-types: 7.8.0
 
@@ -2318,7 +2310,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.10.1(@types/node@24.0.7)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0):
+  astro@5.10.2(@types/node@24.0.10)(jiti@1.21.7)(rollup@4.44.1)(typescript@5.8.3)(yaml@2.8.0):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.6.1
@@ -2373,8 +2365,8 @@ snapshots:
       unist-util-visit: 5.0.0
       unstorage: 1.16.0
       vfile: 6.0.3
-      vite: 6.3.5(@types/node@24.0.7)(jiti@1.21.7)(yaml@2.8.0)
-      vitefu: 1.0.7(vite@6.3.5(@types/node@24.0.7)(jiti@1.21.7)(yaml@2.8.0))
+      vite: 6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.8.0)
+      vitefu: 1.0.7(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.8.0))
       xxhash-wasm: 1.1.0
       yargs-parser: 21.1.1
       yocto-spinner: 0.2.3
@@ -2468,7 +2460,7 @@ snapshots:
   browserslist@4.25.1:
     dependencies:
       caniuse-lite: 1.0.30001726
-      electron-to-chromium: 1.5.177
+      electron-to-chromium: 1.5.178
       node-releases: 2.0.19
       update-browserslist-db: 1.1.3(browserslist@4.25.1)
 
@@ -2602,7 +2594,7 @@ snapshots:
 
   eastasianwidth@0.2.0: {}
 
-  electron-to-chromium@1.5.177: {}
+  electron-to-chromium@1.5.178: {}
 
   emoji-regex@10.4.0: {}
 
@@ -2904,7 +2896,7 @@ snapshots:
 
   magic-string@0.30.17:
     dependencies:
-      '@jridgewell/sourcemap-codec': 1.5.0
+      '@jridgewell/sourcemap-codec': 1.5.4
 
   magicast@0.3.5:
     dependencies:
@@ -3610,7 +3602,7 @@ snapshots:
       arg: 5.0.2
       sax: 1.4.1
 
-  smol-toml@1.4.0: {}
+  smol-toml@1.4.1: {}
 
   source-map-js@1.2.1: {}
 
@@ -3651,7 +3643,7 @@ snapshots:
 
   sucrase@3.35.0:
     dependencies:
-      '@jridgewell/gen-mapping': 0.3.8
+      '@jridgewell/gen-mapping': 0.3.12
       commander: 4.1.1
       glob: 10.4.5
       lines-and-columns: 1.2.4
@@ -3837,7 +3829,7 @@ snapshots:
       '@types/unist': 3.0.3
       vfile-message: 4.0.2
 
-  vite@6.3.5(@types/node@24.0.7)(jiti@1.21.7)(yaml@2.8.0):
+  vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.8.0):
     dependencies:
       esbuild: 0.25.5
       fdir: 6.4.6(picomatch@4.0.2)
@@ -3846,14 +3838,14 @@ snapshots:
       rollup: 4.44.1
       tinyglobby: 0.2.14
     optionalDependencies:
-      '@types/node': 24.0.7
+      '@types/node': 24.0.10
       fsevents: 2.3.3
       jiti: 1.21.7
       yaml: 2.8.0
 
-  vitefu@1.0.7(vite@6.3.5(@types/node@24.0.7)(jiti@1.21.7)(yaml@2.8.0)):
+  vitefu@1.0.7(vite@6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.8.0)):
     optionalDependencies:
-      vite: 6.3.5(@types/node@24.0.7)(jiti@1.21.7)(yaml@2.8.0)
+      vite: 6.3.5(@types/node@24.0.10)(jiti@1.21.7)(yaml@2.8.0)
 
   web-namespaces@2.0.1: {}
 

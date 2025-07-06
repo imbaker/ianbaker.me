@@ -1,15 +1,17 @@
 import { defineConfig, fontProviders } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
-import tailwind from "@astrojs/tailwind";
+
+import tailwindcss from '@tailwindcss/vite';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://ianbaker.me',
+
   integrations: [
     sitemap({
       filter: (page) => page !== 'https://ianbaker.me/alive/' // Exclude healthcheck pages
-    }),
-    tailwind()],
+    })],
+
   experimental: {
     fonts: [
       {
@@ -20,5 +22,20 @@ export default defineConfig({
         display: 'swap',
       }
     ]
+  },
+
+  vite: {
+    plugins: [tailwindcss()]
+  },
+
+  tailwindcss: {
+    theme:
+    {
+      container:
+        {
+          center: false,
+          padding: '2rem',
+        }
+    },
   }
 });

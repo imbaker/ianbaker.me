@@ -1,5 +1,6 @@
 {
   "plugins": ["prettier-plugin-astro", "prettier-plugin-tailwindcss"],
+  "tailwindStylesheet": "./src/styles/global.css",
   "overrides": [
     {
       "files": "*.astro",
@@ -8,7 +9,7 @@
       }
     },
     {
-      "files": "*.json",
+      "files": ["*.json", ".prettierrc"],
       "options": {
         "parser": "json"
       }

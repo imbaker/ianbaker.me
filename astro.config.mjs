@@ -33,8 +33,7 @@ export default defineConfig({
     {
       container:
         {
-          center: false,
-          padding: '2rem',
+          center: true,
         }
     },
   }

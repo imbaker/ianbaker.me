@@ -1,0 +1,1 @@
+- Apply styling using Tailwind CSS.

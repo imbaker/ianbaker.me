@@ -31,11 +31,18 @@ const { concert, index } = Astro.props;
         type="button"
         onclick={`
           const row = document.getElementById('setlist-row-${index}');
+          const section = row.querySelector('section');
           const btn = this;
-          row.classList.toggle('hidden');
-          btn.setAttribute('aria-expanded', !row.classList.contains('hidden'));
-          btn.textContent = row.classList.contains('hidden') ? 'View' : 'Hide';
-          `}
+          if (section.style.height === '' || section.style.height === '0px' || section.style.height === '0') {
+            section.style.height = section.scrollHeight + 'px';
+            btn.setAttribute('aria-expanded', 'true');
+            btn.textContent = 'Hide';
+          } else {
+            section.style.height = '0';
+            btn.setAttribute('aria-expanded', 'false');
+            btn.textContent = 'View';
+          }
+        `}
         class="px-3 py-1 w-16 rounded bg-gray-100 hover:bg-gray-200 hover:font-bold text-gray-700 text-sm transition"
         aria-controls={`setlist-row-${index}`}
         aria-expanded="false">
@@ -43,9 +50,9 @@ const { concert, index } = Astro.props;
       </button>
     </td>
   </tr>
-  <tr id={`setlist-row-${index}`} class="hidden">
+  <tr id={`setlist-row-${index}`}>
     <td colspan="4" class="p-0 bg-gray-50">
-      <section aria-label="setlist">
+      <section aria-label="setlist" class="transition-all duration-1000 ease-in-out overflow-hidden" style="height:0;">
         <ul class="w-full px-8 py-4 text-gray-600 text-base">
           {
             concert.data.songs &&

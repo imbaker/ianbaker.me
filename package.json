@@ -16,7 +16,7 @@
     "astro": "^5.15.7",
     "tailwindcss": "^4.1.17"
   },
-  "packageManager": "pnpm@10.22.0",
+  "packageManager": "pnpm@10.27.0",
   "devDependencies": {
     "@typescript-eslint/parser": "^8.46.4",
     "eslint": "^9.39.1",

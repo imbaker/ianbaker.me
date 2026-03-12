@@ -1,4 +1,5 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
 
 import { file } from 'astro/loaders';
 
@@ -7,7 +8,7 @@ const concerts = defineCollection({
   schema:
     z.object({
       id: z.string(),
-      date: z.string().transform((date) => new Date(date)),
+      date: z.coerce.date(),
       venue: z.object({
         name: z.string(),
         city: z.string(),

@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Concert from '../components/Concert.astro';
 
 const concerts = await getCollection('concerts');
+concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 ---
 
 <Layout>

@@ -12,17 +12,14 @@ export default defineConfig({
       filter: (page) => page !== 'https://ianbaker.me/alive/' // Exclude healthcheck pages
     })],
 
-  experimental: {
-    fonts: [
+  fonts: [
       {
         name: 'Lato',
         provider: fontProviders.google(),
         weights: ['400', '700'],
         cssVariable: '--font-lato',
         display: 'swap',
-      }
-    ]
-  },
+      }],
 
   vite: {
     plugins: [tailwindcss()]

@@ -1,4 +1,5 @@
 export interface Song {
+  order: number;
   title: string;
 }
 
@@ -9,9 +10,8 @@ export interface Venue {
 }
 
 export interface Concert {
-  data: {
-    date: Date;
-    venue: Venue;
-    songs: Song[];
-  };
+  id: string;
+  date: Date;
+  venue: Venue;
+  songs: Song[];
 }

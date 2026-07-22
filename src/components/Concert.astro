@@ -1,15 +1,18 @@
 ---
 import FormattedDate from './FormattedDate.astro';
+import Song from './Song.astro';
 import type { Concert } from '../types/concert';
 
 export interface Props {
-  concert: Concert;
+  concert: {
+    id: string;
+    data: Concert;
+  };
   index: number;
 }
 
 const { concert, index } = Astro.props;
 ---
-
 <>
   <tr class="transition hover:bg-gray-50">
     <td
@@ -20,7 +23,7 @@ const { concert, index } = Astro.props;
       <FormattedDate date={concert.data.date} />
     </td>
     <td class="border-b border-gray-200 px-4 py-2 text-gray-700">
-      <span>{concert.data.venue.name.replace("'", '’')}</span>
+      <span>{concert.data.venue.name}</span>
       <br />
       <span class="text-sm text-gray-500 italic">
         {concert.data.venue.city}, {concert.data.venue.country}
@@ -29,42 +32,51 @@ const { concert, index } = Astro.props;
     <td class="border-b border-gray-200 px-4 py-2">
       <button
         type="button"
-        onclick={`
-          const row = document.getElementById('setlist-row-${index}');
-          const section = row.querySelector('section');
-          const btn = this;
-          if (section.style.height === '' || section.style.height === '0px' || section.style.height === '0') {
-            section.style.height = section.scrollHeight + 'px';
-            btn.setAttribute('aria-expanded', 'true');
-            btn.textContent = 'Hide';
-          } else {
-            section.style.height = '0';
-            btn.setAttribute('aria-expanded', 'false');
-            btn.textContent = 'View';
-          }
-        `}
-        class="w-16 rounded bg-gray-100 px-3 py-1 text-sm text-gray-700 transition hover:bg-gray-200 hover:font-bold"
-        aria-controls={`setlist-row-${index}`}
+        class="rounded bg-gray-100 px-3 py-1 text-sm text-gray-700 transition hover:bg-gray-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-600"
+        data-setlist-toggle={index}
+        aria-controls={`setlist-${index}`}
         aria-expanded="false">
-        View
+        View setlist
       </button>
     </td>
   </tr>
-  <tr id={`setlist-row-${index}`}>
+  <tr>
     <td colspan="4" class="bg-gray-50 p-0">
-      <section aria-label="setlist" class="overflow-hidden transition-all duration-1000 ease-in-out" style="height:0;">
-        <ul class="w-full px-8 py-4 text-base text-gray-600">
+      <div
+        id={`setlist-${index}`}
+        aria-label="Concert setlist"
+        class="overflow-hidden transition-all duration-800 ease-in-out"
+        style="max-height: 0;">
+        <ul class="w-full px-8 py-4 text-base text-gray-600" aria-label="Setlist songs">
           {
             concert.data.songs &&
-              concert.data.songs.map((song: { title: string }, index: number) => (
-                <li class="mb-1">
-                  <span class="font-mono text-gray-500">{index + 1}.</span>{' '}
-                  {song.title.replace("'", '’')}
-                </li>
+              concert.data.songs.map((song) => (
+                <Song order={song.order} title={song.title} />
               ))
           }
         </ul>
-      </section>
+      </div>
     </td>
   </tr>
 </>
+
+<script is:inline define:vars={{ index }}>
+  const btn = document.querySelector(`[data-setlist-toggle="${index}"]`);
+  const row = document.getElementById(`setlist-${index}`);
+
+  btn?.addEventListener('click', () => {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', !isOpen);
+
+    // Wait for next frame to ensure content is rendered
+    requestAnimationFrame(() => {
+      if (isOpen) {
+        row.style.maxHeight = '0';
+      } else {
+        row.style.maxHeight = row.scrollHeight + 'px';
+      }
+    });
+
+    btn.textContent = isOpen ? 'View setlist' : 'Hide setlist';
+  });
+</script>

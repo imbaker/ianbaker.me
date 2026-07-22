@@ -9,7 +9,7 @@ export default defineConfig({
 
   integrations: [
     sitemap({
-      filter: (page) => page !== 'https://ianbaker.me/alive/' // Exclude healthcheck pages
+      filter: (page) => page !== 'https://ianbaker.me/alive/' // Exclude healthcheck page from sitemap
     })],
 
   fonts: [

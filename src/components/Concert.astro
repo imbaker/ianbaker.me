@@ -11,22 +11,22 @@ const { concert, index } = Astro.props;
 ---
 
 <>
-  <tr class="hover:bg-gray-50 transition">
+  <tr class="transition hover:bg-gray-50">
     <td
-      class="py-2 px-4 border-b border-gray-200 font-mono text-3xl text-gray-50 bg-gray-500 text-center tracking-tight">
+      class="border-b border-gray-200 bg-gray-500 px-4 py-2 text-center font-mono text-3xl tracking-tight text-gray-50">
       {index + 1}
     </td>
-    <td class="py-2 px-4 border-b border-gray-200 text-gray-700">
+    <td class="border-b border-gray-200 px-4 py-2 text-gray-700">
       <FormattedDate date={concert.data.date} />
     </td>
-    <td class="py-2 px-4 border-b border-gray-200 text-gray-700">
+    <td class="border-b border-gray-200 px-4 py-2 text-gray-700">
       <span>{concert.data.venue.name.replace("'", '’')}</span>
       <br />
-      <span class="text-gray-500 text-sm italic">
+      <span class="text-sm text-gray-500 italic">
         {concert.data.venue.city}, {concert.data.venue.country}
       </span>
     </td>
-    <td class="py-2 px-4 border-b border-gray-200">
+    <td class="border-b border-gray-200 px-4 py-2">
       <button
         type="button"
         onclick={`
@@ -43,7 +43,7 @@ const { concert, index } = Astro.props;
             btn.textContent = 'View';
           }
         `}
-        class="px-3 py-1 w-16 rounded bg-gray-100 hover:bg-gray-200 hover:font-bold text-gray-700 text-sm transition"
+        class="w-16 rounded bg-gray-100 px-3 py-1 text-sm text-gray-700 transition hover:bg-gray-200 hover:font-bold"
         aria-controls={`setlist-row-${index}`}
         aria-expanded="false">
         View
@@ -51,9 +51,9 @@ const { concert, index } = Astro.props;
     </td>
   </tr>
   <tr id={`setlist-row-${index}`}>
-    <td colspan="4" class="p-0 bg-gray-50">
-      <section aria-label="setlist" class="transition-all duration-1000 ease-in-out overflow-hidden" style="height:0;">
-        <ul class="w-full px-8 py-4 text-gray-600 text-base">
+    <td colspan="4" class="bg-gray-50 p-0">
+      <section aria-label="setlist" class="overflow-hidden transition-all duration-1000 ease-in-out" style="height:0;">
+        <ul class="w-full px-8 py-4 text-base text-gray-600">
           {
             concert.data.songs &&
               concert.data.songs.map((song: { title: string }, index: number) => (

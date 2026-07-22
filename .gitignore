@@ -1,8 +1,12 @@
 # build output
 dist/
+
 # generated types
 .astro/
-.vscode/
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 
 # dependencies
 node_modules/

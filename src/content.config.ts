@@ -3,7 +3,7 @@ import { z } from 'astro/zod';
 
 import { file } from 'astro/loaders';
 
-const formatQuotes = (str: string) => str.replace("'", "\u2019");
+const formatQuotes = (str: string) => str.replaceAll("'", "\u2019");
 
 const concerts = defineCollection({
   loader: file("src/content/data/concerts.json"),
@@ -17,7 +17,7 @@ const concerts = defineCollection({
         country: z.string()
       }),
       songs: z.array(z.object({
-        order: z.number(),
+        order: z.number().int().nonnegative(),
         title: z.string().transform(formatQuotes)
       })),
     }),

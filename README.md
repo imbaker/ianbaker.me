@@ -13,6 +13,7 @@ Inside of your Astro project, you'll see the following folders and files:
 │   ├── content/
 │   ├── layouts/
 │   ├── pages/
+│   ├── scripts/
 │   └── styles/
 ├── astro.config.mjs
 ├── README.md
@@ -30,3 +31,5 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm add -D <package>` | Installs dev dependencies                   |
 | `pnpm dev`              | Starts local dev server at `localhost:4321` |
 | `pnpm up`               | Upgrade packages                            |
+| `pnpm check`            | Run astro check                             |
+| `pnpm lint`            | Run eslint                                  |

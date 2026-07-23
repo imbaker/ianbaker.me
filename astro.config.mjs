@@ -23,15 +23,5 @@ export default defineConfig({
 
   vite: {
     plugins: [tailwindcss()]
-  },
-
-  tailwindcss: {
-    theme:
-    {
-      container:
-        {
-          center: true,
-        }
-    },
   }
 });

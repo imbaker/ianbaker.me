@@ -6,7 +6,7 @@ import { file } from 'astro/loaders';
 const formatQuotes = (str: string) => str.replace("'", "\u2019");
 
 const concerts = defineCollection({
-  loader: file("src/content/concerts.json"),
+  loader: file("src/content/data/concerts.json"),
   schema:
     z.object({
       id: z.string(),

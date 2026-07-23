@@ -59,24 +59,3 @@ const { concert, index } = Astro.props;
     </td>
   </tr>
 </>
-
-<script is:inline define:vars={{ index }}>
-  const btn = document.querySelector(`[data-setlist-toggle="${index}"]`);
-  const row = document.getElementById(`setlist-${index}`);
-
-  btn?.addEventListener('click', () => {
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', !isOpen);
-
-    // Wait for next frame to ensure content is rendered
-    requestAnimationFrame(() => {
-      if (isOpen) {
-        row.style.maxHeight = '0';
-      } else {
-        row.style.maxHeight = row.scrollHeight + 'px';
-      }
-    });
-
-    btn.textContent = isOpen ? 'View setlist' : 'Hide setlist';
-  });
-</script>

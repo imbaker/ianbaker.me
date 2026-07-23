@@ -2,3 +2,7 @@
   command = "pnpm run build"
   publish = "dist"
 
+[[redirects]]
+  from = "/springsteen"
+  to = "/"
+  status = 301

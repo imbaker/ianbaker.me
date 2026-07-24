@@ -7,7 +7,7 @@ import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="en" data-bs-theme="light">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -16,12 +16,30 @@ import '../styles/global.css';
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <script is:inline>
+      const stored = localStorage.getItem('theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
   </head>
-  <body class="mx-auto max-w-7xl"  >
-    <Header title={SITE_TITLE} />
-    <main>
-      <slot />
-    </main>
-    <Footer />
+  <body class="mx-auto max-w-7xl bg-neutral-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100"  >
+    <div class="mx-auto max-w-3xl">
+      <Header title={SITE_TITLE} />
+      <main>
+        <slot />
+      </main>
+      <Footer />
+    </div>
+    <script>
+      function toggleTheme() {
+        const current = document.documentElement.getAttribute('data-bs-theme');
+        const next = current === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-bs-theme', next);
+        localStorage.setItem('theme', next);
+      }
+      window.toggleTheme = toggleTheme;
+    </script>
   </body>
 </html>

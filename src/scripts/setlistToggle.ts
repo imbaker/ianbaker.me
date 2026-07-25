@@ -4,7 +4,15 @@ function getExpandDuration(el: HTMLElement): number {
   return value.includes('ms') ? seconds : seconds * 1000;
 }
 
-function chaseScroll(target: HTMLElement, duration: number): void {
+function easeInOutQuad(t: number): number {
+  return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+}
+
+function smoothScrollTo(target: HTMLElement, duration: number): void {
+  const scrollMarginTop = parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
+  const startY = window.scrollY;
+  const targetY = target.getBoundingClientRect().top + window.scrollY - scrollMarginTop;
+  const distance = targetY - startY;
   const start = performance.now();
   let cancelled = false;
 
@@ -19,8 +27,10 @@ function chaseScroll(target: HTMLElement, duration: number): void {
 
   function step(now: number) {
     if (cancelled) return;
-    target.scrollIntoView({ behavior: 'auto', block: 'start' });
-    if (now - start < duration) {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    window.scrollTo(0, startY + distance * easeInOutQuad(progress));
+    if (progress < 1) {
       requestAnimationFrame(step);
     } else {
       cancel();
@@ -48,7 +58,7 @@ export function initSetlistToggles(): void {
         row.style.maxHeight = '0';
       } else {
         row.style.maxHeight = `${row.scrollHeight}px`;
-        chaseScroll(btn.closest('tr')!, getExpandDuration(row));
+        smoothScrollTo(btn.closest('tr')!, getExpandDuration(row));
       }
     });
 

@@ -1,3 +1,21 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-surface: var(--color-neutral-50);
+  --color-surface-muted: var(--color-neutral-200);
+  --color-surface-hover: var(--color-neutral-100);
+  --color-text: var(--color-neutral-600);
+  --color-text-muted: var(--color-neutral-500);
+  --color-border: var(--color-neutral-200);
+}
+
+.dark {
+  --color-surface: var(--color-neutral-900);
+  --color-surface-muted: var(--color-neutral-700);
+  --color-surface-hover: var(--color-neutral-800);
+  --color-text: var(--color-neutral-100);
+  --color-text-muted: var(--color-neutral-400);
+  --color-border: var(--color-neutral-700);
+}

@@ -7,7 +7,7 @@ import '../styles/global.css';
 ---
 
 <!doctype html>
-<html lang="en" data-bs-theme="light">
+<html lang="en">
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -24,22 +24,13 @@ import '../styles/global.css';
       }
     </script>
   </head>
-  <body class="mx-auto max-w-7xl bg-neutral-50 text-gray-800 dark:bg-gray-900 dark:text-gray-100"  >
-    <div class="mx-auto max-w-3xl">
+  <body class="bg-surface text-text mx-auto max-w-7xl">
+    <div class="mx-auto max-w-3xl px-4">
       <Header title={SITE_TITLE} />
       <main>
         <slot />
       </main>
       <Footer />
     </div>
-    <script>
-      function toggleTheme() {
-        const current = document.documentElement.getAttribute('data-bs-theme');
-        const next = current === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-bs-theme', next);
-        localStorage.setItem('theme', next);
-      }
-      window.toggleTheme = toggleTheme;
-    </script>
   </body>
 </html>

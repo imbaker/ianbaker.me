@@ -8,13 +8,9 @@ export default defineConfig({
     }
   ],
   reporter: [['html', { outputFolder: 'playwright-report' }]],
-  webServer: [{
-    command: 'pnpm build',
-    reuseExistingServer: false,
-  },
-  {
-    command: 'pnpm preview',
+  webServer: {
+    command: 'pnpm build && pnpm preview',
     url: 'http://localhost:4321',
     reuseExistingServer: false,
-  }]
+  }
 });

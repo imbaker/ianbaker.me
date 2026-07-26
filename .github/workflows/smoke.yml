@@ -19,6 +19,8 @@ jobs:
 
       - run: pnpm install
 
+      - run: pnpm build
+
       - run: pnpm dlx playwright install --with-deps
 
       - run: pnpm exec playwright test --project=chromium

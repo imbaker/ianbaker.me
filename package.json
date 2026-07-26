@@ -22,10 +22,12 @@
   },
   "packageManager": "pnpm@11.16.0",
   "devDependencies": {
+    "@playwright/test": "^1.62.0",
     "@typescript-eslint/parser": "^8.65.0",
     "eslint": "^10.8.0",
     "eslint-plugin-astro": "^3.0.1",
     "eslint-plugin-tailwindcss": "^4.2.0",
+    "playwright": "^1.62.0",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
     "typescript": "^6.0.3"

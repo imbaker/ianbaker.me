@@ -7,6 +7,8 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://ianbaker.me',
 
+  output: 'static',
+
   integrations: [
     sitemap({
       filter: (page) => page !== 'https://ianbaker.me/alive/' // Exclude healthcheck page from sitemap

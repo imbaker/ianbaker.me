@@ -24,3 +24,5 @@ jobs:
       - run: pnpm dlx playwright install --with-deps
 
       - run: pnpm exec playwright test --project=chromium
+
+      - run: pnpm exec playwright show-report

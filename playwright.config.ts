@@ -7,6 +7,7 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     }
   ],
+  reporter: [['html', { outputFolder: 'playwright-report' }]],
   webServer: [{
     command: 'pnpm build',
     reuseExistingServer: false,

@@ -26,6 +26,14 @@ jobs:
       - name: Run Playwright smoke tests
         run: pnpm exec playwright test --project=chromium
 
+      - name: Publish test results
+        uses: dorny/test-reporter@v3
+        if: ${{ !cancelled() }}
+        with:
+          name: Playwright Results
+          path: results.xml
+          reporter: java-junit
+
       - name: Upload Playwright report
         if: always()
         uses: actions/upload-artifact@v7

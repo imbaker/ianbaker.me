@@ -9,7 +9,7 @@ export default defineConfig({
   ],
   reporter: [['html', { outputFolder: 'playwright-report' }]],
   webServer: {
-    command: 'pnpm build && pnpm preview',
+    command: 'pnpm preview',
     url: 'http://localhost:4321',
     reuseExistingServer: false,
   }

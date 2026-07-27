@@ -4,6 +4,14 @@ on:
   push:
   pull_request:
 
+concurrency:
+  group: smoke--${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  checks: write
+
 jobs:
   smoke:
     runs-on: ubuntu-latest
@@ -14,14 +22,22 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
+          cache: pnpm
 
-      - run: npm install -g pnpm
-
-      - run: pnpm install
+      - run: pnpm install --frozen-lockfile
 
       - run: pnpm build
 
-      - run: pnpm dlx playwright install --with-deps
+      - name: Cache Playwright browsers
+        uses: actions/cache@v5
+        id: playwright-cache
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-${{ runner.os }}-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Playwright browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
+        run: pnpm exec playwright install --with-deps chromium
 
       - name: Run Playwright smoke tests
         run: pnpm exec playwright test --project=chromium

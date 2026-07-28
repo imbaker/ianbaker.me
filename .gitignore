@@ -27,3 +27,5 @@ pnpm-debug.log*
 
 # Playwright test results
 test-results/
+playwright-report/
+results.xml

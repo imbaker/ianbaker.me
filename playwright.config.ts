@@ -7,7 +7,10 @@ export default defineConfig({
       use: { ...devices['Desktop Chrome'] },
     }
   ],
-  reporter: [['html', { outputFolder: 'playwright-report' }], ['junit', { outputFile: 'results.xml' }]],
+  reporter: [
+    ['html', { outputFolder: 'playwright-report' }],
+    ['junit', { outputFile: 'test-results/results.xml' }]
+  ],
   webServer: {
     command: 'pnpm preview',
     url: 'http://localhost:4321',

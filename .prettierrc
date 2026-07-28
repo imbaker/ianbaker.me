@@ -19,6 +19,12 @@
       "options": {
         "parser": "yaml"
       }
+    },
+    {
+      "files": ["*.js", "*.mjs", "*.cjs"],
+      "options": {
+        "parser": "babel"
+      }
     }
   ]
 }

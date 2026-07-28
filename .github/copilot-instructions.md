@@ -23,6 +23,9 @@
 - **Upgrade packages:** `pnpm up`
 - **Format code:** Prettier is configured with Astro and Tailwind plugins. Use `pnpm exec prettier --write .`
 - **Lint code:** ESLint is set up for Astro and TypeScript. Use `pnpm exec eslint .`
+- The site should be able to be deployed to Netlify and Cloudflare pages.
+- **Commit messages:** Use conventional commits (e.g., `feat: add new concert`, `fix: correct date format`).
+- **Smoke tests:** These are defined in tests/smoke.spec.ts and can be run with `pnpm test`. They check that the site builds and renders correctly.
 
 ## Project Conventions
 

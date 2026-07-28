@@ -50,7 +50,7 @@ jobs:
         if: ${{ !cancelled() }}
         with:
           name: Playwright Results
-          path: results.xml
+          path: test-results/results.xml
           reporter: java-junit
 
       - name: Upload Playwright report

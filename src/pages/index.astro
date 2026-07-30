@@ -1,15 +1,17 @@
 ---
-import { getCollection } from 'astro:content';
-import Layout from '../layouts/Layout.astro';
-import Concert from '../components/Concert.astro';
+import { getCollection } from "astro:content";
+import Layout from "../layouts/Layout.astro";
+import Concert from "../components/Concert.astro";
 
-const concerts = await getCollection('concerts');
+const concerts = await getCollection("concerts");
 concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 ---
 
 <Layout>
   <div class="overflow-x-auto">
-    <table class="w-full table-auto border border-border bg-surface" aria-label="Concert history with setlists">
+    <table
+      class="w-full table-auto border border-border bg-surface"
+      aria-label="Concert history with setlists">
       <thead>
         <tr class="bg-surface-muted">
           <th class="border-border px-4 py-2 text-center font-bold text-text"
@@ -22,8 +24,7 @@ concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
             >Venue</th
           >
           <th class="border-border px-4 py-2 text-center font-bold text-text"
-            ></th
-          >
+          ></th>
         </tr>
       </thead>
       <tbody>
@@ -37,7 +38,7 @@ concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
   </div>
 
   <script>
-    import { initSetlistToggles } from '../scripts/setlistToggle';
+    import { initSetlistToggles } from "../scripts/setlistToggle";
     initSetlistToggles();
   </script>
 </Layout>

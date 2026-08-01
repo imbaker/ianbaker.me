@@ -26,7 +26,7 @@ const { concert, index } = Astro.props;
     <td class="border-b border-border px-4 py-2 text-text">
       <span>{concert.data.venue.name}</span>
       <br />
-      <span class="text-sm text-text-muted italic">
+      <span class="text-sm text-gray-600 italic dark:text-text-muted">
         {concert.data.venue.city}, {concert.data.venue.country}
       </span>
     </td>
@@ -46,9 +46,9 @@ const { concert, index } = Astro.props;
       <div
         id={`setlist-${index}`}
         aria-label="Concert setlist"
-        class="overflow-hidden transition-all duration-1000 ease-in-out"
+        class="overflow-hidden transition-all duration-1000 ease-in-out motion-reduce:transition-none"
         style="max-height: 0;">
-        <ul
+        <ol
           class="w-full px-8 py-4 text-base text-text-muted"
           aria-label="Setlist songs">
           {
@@ -57,7 +57,7 @@ const { concert, index } = Astro.props;
                 <Song order={song.order} title={song.title} />
               ))
           }
-        </ul>
+        </ol>
       </div>
     </td>
   </tr>

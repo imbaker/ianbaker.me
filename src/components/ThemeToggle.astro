@@ -9,7 +9,8 @@ const { class: className } = Astro.props;
 <button
   id="theme-toggle"
   type="button"
-  aria-label="Toggle dark mode"
+  aria-label="Switch to dark mode"
+  aria-pressed="false"
   class:list={[
     "rounded p-2 text-gray-800 hover:bg-gray-200 dark:text-gray-100 dark:hover:bg-gray-700",
     className,
@@ -22,7 +23,8 @@ const { class: className } = Astro.props;
     stroke="currentColor"
     stroke-width="2"
     stroke-linecap="round"
-    stroke-linejoin="round">
+    stroke-linejoin="round"
+    aria-hidden="true">
     <circle cx="12" cy="12" r="4"></circle>
     <line x1="12" y1="2" x2="12" y2="4"></line>
     <line x1="12" y1="20" x2="12" y2="22"></line>
@@ -42,14 +44,33 @@ const { class: className } = Astro.props;
     stroke="currentColor"
     stroke-width="2"
     stroke-linecap="round"
-    stroke-linejoin="round">
+    stroke-linejoin="round"
+    aria-hidden="true">
     <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"></path>
   </svg>
 </button>
 
 <script is:inline>
-  document.getElementById("theme-toggle")?.addEventListener("click", () => {
-    const isDark = document.documentElement.classList.toggle("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  });
+  (() => {
+    const toggle = document.getElementById("theme-toggle");
+    if (!toggle) return;
+
+    const syncState = (isDark) => {
+      toggle.setAttribute("aria-pressed", String(isDark));
+      toggle.setAttribute(
+        "aria-label",
+        isDark ? "Switch to light mode" : "Switch to dark mode",
+      );
+    };
+
+    // Reflect the theme already applied by the early-run script in
+    // <head>, since aria-pressed can't be known at server-render time.
+    syncState(document.documentElement.classList.contains("dark"));
+
+    toggle.addEventListener("click", () => {
+      const isDark = document.documentElement.classList.toggle("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+      syncState(isDark);
+    });
+  })();
 </script>

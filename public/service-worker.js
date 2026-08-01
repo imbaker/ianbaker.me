@@ -36,9 +36,16 @@ self.addEventListener("activate", (event) => {
 self.addEventListener("fetch", (event) => {
   const request = event.request;
 
+  // Only handle http(s) requests. Requests from browser extensions
+  // (chrome-extension://, moz-extension://, etc.) can't be stored in
+  // the Cache API and aren't ours to intercept anyway.
+  if (!request.url.startsWith("http")) {
+    return;
+  }
+
   // HTML pages → network-first (ensures fresh content)
   if (request.mode === "navigate") {
-    event.respondUntil(fetch(request).catch(() => caches.match("/")));
+    event.respondWith(fetch(request).catch(() => caches.match("/")));
     return;
   }
 

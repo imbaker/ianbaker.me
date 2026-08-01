@@ -8,10 +8,10 @@ concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 ---
 
 <Layout>
+  <h2 class="my-4 text-xl font-bold text-text">Concert history</h2>
   <div class="overflow-x-auto">
-    <table
-      class="w-full table-auto border border-border bg-surface"
-      aria-label="Concert history with setlists">
+    <table class="w-full table-auto border border-border bg-surface">
+      <caption class="sr-only">Concert history with setlists</caption>
       <thead>
         <tr class="bg-surface-muted">
           <th class="border-border px-4 py-2 text-center font-bold text-text"
@@ -23,8 +23,9 @@ concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
           <th class="border-border px-4 py-2 text-left font-bold text-text"
             >Venue</th
           >
-          <th class="border-border px-4 py-2 text-center font-bold text-text"
-          ></th>
+          <th class="border-border px-4 py-2 text-center font-bold text-text">
+            <span class="sr-only">Setlist</span>
+          </th>
         </tr>
       </thead>
       <tbody>

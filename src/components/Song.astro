@@ -8,6 +8,8 @@ const { order, title } = Astro.props;
 ---
 
 <li class="mb-1">
-  <span class="font-mono text-gray-500 dark:text-gray-400">{order}.</span>
+  <span class="font-mono text-gray-600 dark:text-gray-400" aria-hidden="true"
+    >{order}.</span
+  >
   {title}
 </li>

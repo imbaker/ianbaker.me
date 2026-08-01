@@ -8,7 +8,16 @@ function easeInOutQuad(t: number): number {
   return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
 }
 
+function prefersReducedMotion(): boolean {
+  return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
 function smoothScrollTo(target: HTMLElement, duration: number): void {
+  if (prefersReducedMotion()) {
+    target.scrollIntoView({ block: "nearest" });
+    return;
+  }
+
   const scrollMarginTop =
     parseFloat(getComputedStyle(target).scrollMarginTop) || 0;
   const startY = window.scrollY;

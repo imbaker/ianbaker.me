@@ -1,5 +1,7 @@
-// Name your cache — bump the version when you want to invalidate old caches
-const CACHE_NAME = "ianbaker-cache-v1";
+// Cache name — the __CACHE_VERSION__ placeholder is replaced at build time
+// by the inject-sw-version Astro integration (see astro.config.mjs), so a
+// fresh cache name is generated on every deploy without manual bumping.
+const CACHE_NAME = "ianbaker-cache-__CACHE_VERSION__";
 
 // Which files to pre-cache (optional for Astro, but useful for offline)
 const PRECACHE_URLS = [

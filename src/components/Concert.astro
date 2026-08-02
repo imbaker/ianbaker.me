@@ -52,10 +52,13 @@ const { concert, index } = Astro.props;
           class="w-full px-8 py-4 text-base text-text-muted"
           aria-label="Setlist songs">
           {
-            concert.data.songs &&
+            concert.data.songs && concert.data.songs.length > 0 ? (
               concert.data.songs.map((song) => (
                 <Song order={song.order} title={song.title} />
               ))
+            ) : (
+              <li class="list-none italic">No setlist recorded for this show.</li>
+            )
           }
         </ol>
       </div>

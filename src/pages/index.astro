@@ -9,37 +9,52 @@ concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
 
 <Layout>
   <h2 class="my-4 text-xl font-bold text-text">Concert history</h2>
-  <div class="overflow-x-auto">
-    <table class="w-full table-auto border border-border bg-surface">
-      <caption class="sr-only">Concert history with setlists</caption>
-      <thead>
-        <tr class="bg-surface-muted">
-          <th class="border-border px-4 py-2 text-center font-bold text-text"
-            >#</th
-          >
-          <th class="border-border px-4 py-2 text-left font-bold text-text"
-            >Date</th
-          >
-          <th class="border-border px-4 py-2 text-left font-bold text-text"
-            >Venue</th
-          >
-          <th class="border-border px-4 py-2 text-center font-bold text-text">
-            <span class="sr-only">Setlist</span>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {
-          concerts.map((concert, index) => (
-            <Concert concert={concert} index={index} />
-          ))
-        }
-      </tbody>
-    </table>
+  <div class="relative">
+    <div id="table-scroll" class="overflow-x-auto">
+      <table class="w-full table-auto border border-border bg-surface">
+        <caption class="sr-only">Concert history with setlists</caption>
+        <thead>
+          <tr class="bg-surface-muted">
+            <th class="border-border px-4 py-2 text-center font-bold text-text"
+              >#</th
+            >
+            <th class="border-border px-4 py-2 text-left font-bold text-text"
+              >Date</th
+            >
+            <th class="border-border px-4 py-2 text-left font-bold text-text"
+              >Venue</th
+            >
+            <th
+              class="border-border px-4 py-2 text-center font-bold text-text">
+              <span class="sr-only">Setlist</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            concerts.map((concert, index) => (
+              <Concert concert={concert} index={index} />
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+    <div
+      id="scroll-fade-left"
+      class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-surface-muted to-transparent opacity-0 transition-opacity dark:from-surface"
+      aria-hidden="true"
+    />
+    <div
+      id="scroll-fade-right"
+      class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-surface-muted to-transparent opacity-0 transition-opacity dark:from-surface"
+      aria-hidden="true"
+    />
   </div>
 
   <script>
     import { initSetlistToggles } from "../scripts/setlistToggle";
+    import { initTableScrollFade } from "../scripts/tableScrollFade";
     initSetlistToggles();
+    initTableScrollFade();
   </script>
 </Layout>

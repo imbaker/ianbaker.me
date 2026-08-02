@@ -47,21 +47,20 @@ test("theme toggle switches between light and dark", async ({ page }) => {
   const button = page.locator("#theme-toggle");
 
   // Initial state
-  const initiallyDark = await html.evaluate((el) =>
-    el.classList.contains("dark"),
-  );
+  const isDark = async () =>
+    html.evaluate((el) => el.classList.contains("dark"));
+
+  await expect.poll(isDark).toBe(false);
 
   await button.click();
 
-  await expect
-    .poll(async () => html.evaluate((el) => el.classList.contains("dark")))
-    .toBe(!initiallyDark);
+  await expect.poll(isDark).toBe(true);
+  await expect(button).toHaveAttribute("aria-label", "Switch to light mode");
 
   await button.click();
 
-  await expect
-    .poll(async () => html.evaluate((el) => el.classList.contains("dark")))
-    .toBe(initiallyDark);
+  await expect.poll(isDark).toBe(false);
+  await expect(button).toHaveAttribute("aria-label", "Switch to dark mode");
 });
 
 test("page has no CSP violations", async ({ page }) => {

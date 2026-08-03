@@ -52,6 +52,7 @@ export default defineConfig({
   ],
 
   vite: {
+    build: { assetsInlineLimit: 0 }, // Disable inlining of assets to avoid caching issues with service worker
     plugins: [tailwindcss()],
   },
 });

@@ -24,8 +24,7 @@ concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
             <th class="border-border px-4 py-2 text-left font-bold text-text"
               >Venue</th
             >
-            <th
-              class="border-border px-4 py-2 text-center font-bold text-text">
+            <th class="border-border px-4 py-2 text-center font-bold text-text">
               <span class="sr-only">Setlist</span>
             </th>
           </tr>
@@ -41,14 +40,14 @@ concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
     </div>
     <div
       id="scroll-fade-left"
-      class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-gradient-to-r from-surface-muted to-transparent opacity-0 transition-opacity dark:from-surface"
-      aria-hidden="true"
-    />
+      class="pointer-events-none absolute inset-y-0 left-0 w-8 bg-linear-to-r from-surface-muted to-transparent opacity-0 transition-opacity dark:from-surface"
+      aria-hidden="true">
+    </div>
     <div
       id="scroll-fade-right"
-      class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-surface-muted to-transparent opacity-0 transition-opacity dark:from-surface"
-      aria-hidden="true"
-    />
+      class="pointer-events-none absolute inset-y-0 right-0 w-8 bg-linear-to-l from-surface-muted to-transparent opacity-0 transition-opacity dark:from-surface"
+      aria-hidden="true">
+    </div>
   </div>
 
   <script>

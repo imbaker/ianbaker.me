@@ -49,10 +49,6 @@ import "../styles/global.css";
       </main>
       <Footer />
     </div>
-    <script is:inline>
-      if ("serviceWorker" in navigator) {
-        navigator.serviceWorker.register("/service-worker.js");
-      }
-    </script>
+    <script is:inline src="/register-service-worker.js"></script>
   </body>
 </html>

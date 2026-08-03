@@ -66,6 +66,10 @@ export function initSetlistToggles(): void {
     const isOpen = btn.getAttribute("aria-expanded") === "true";
     btn.setAttribute("aria-expanded", String(!isOpen));
 
+    // keep the collapsed <tr> out of the accessibility tree
+    const detailRow = row.closest<HTMLTableRowElement>("tr");
+    detailRow?.setAttribute("aria-hidden", String(isOpen));
+
     requestAnimationFrame(() => {
       if (isOpen) {
         row.style.maxHeight = "0";
@@ -75,6 +79,9 @@ export function initSetlistToggles(): void {
       }
     });
 
-    btn.textContent = isOpen ? "View setlist" : "Hide setlist";
+    const label = btn.querySelector<HTMLElement>("[data-setlist-label]");
+    if (label) {
+      label.textContent = isOpen ? "View setlist" : "Hide setlist";
+    }
   });
 }

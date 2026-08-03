@@ -14,7 +14,7 @@ concerts.sort((a, b) => a.data.date.getTime() - b.data.date.getTime());
       <table class="w-full table-auto border border-border bg-surface">
         <caption class="sr-only">Concert history with setlists</caption>
         <thead>
-          <tr class="bg-surface-muted">
+          <tr aria-hidden="true" class="bg-surface-muted">
             <th class="border-border px-4 py-2 text-center font-bold text-text"
               >#</th
             >

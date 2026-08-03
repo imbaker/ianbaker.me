@@ -33,15 +33,36 @@ const { concert, index } = Astro.props;
     <td class="border-b border-border px-4 py-2">
       <button
         type="button"
-        class="rounded bg-surface-muted px-3 py-1 text-sm text-text transition hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:hover:bg-neutral-600 dark:focus-visible:outline-neutral-400"
+        class="group inline-flex items-center gap-2 rounded bg-surface-muted px-3 py-1 text-sm text-text transition hover:bg-neutral-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-neutral-600 dark:hover:bg-neutral-600 dark:focus-visible:outline-neutral-400"
         data-setlist-toggle={index}
         aria-controls={`setlist-${index}`}
-        aria-expanded="false">
-        View setlist
+        aria-expanded="false"
+        aria-label={`View setlist for ${concert.data.venue.name} on ${concert.data.date.toLocaleDateString("en-GB", { year: "numeric", month: "long", day: "numeric" })}`}>
+        <!-- List icon (Font Awesome "list"), shown when collapsed and there's room -->
+        <svg
+          class="hidden size-3.5 sm:inline-block sm:group-aria-expanded:hidden"
+          viewBox="0 0 512 512"
+          fill="currentColor"
+          aria-hidden="true">
+          <path
+            d="M40 48C26.7 48 16 58.7 16 72v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V72c0-13.3-10.7-24-24-24H40zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32H480c17.7 0 32-14.3 32-32s-14.3-32-32-32H192zM16 232v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V232c0-13.3-10.7-24-24-24H40c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24v48c0 13.3 10.7 24 24 24H88c13.3 0 24-10.7 24-24V392c0-13.3-10.7-24-24-24H40z">
+          </path>
+        </svg>
+        <!-- Chevron-up icon (Font Awesome "chevron-up"), shown when expanded and there's room -->
+        <svg
+          class="hidden size-3.5 sm:group-aria-expanded:inline-block"
+          viewBox="0 0 512 512"
+          fill="currentColor"
+          aria-hidden="true">
+          <path
+            d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z">
+          </path>
+        </svg>
+        <span data-setlist-label>View setlist</span>
       </button>
     </td>
   </tr>
-  <tr>
+  <tr aria-hidden="true">
     <td colspan="4" class="bg-surface-muted p-0">
       <div
         id={`setlist-${index}`}
@@ -57,7 +78,9 @@ const { concert, index } = Astro.props;
                 <Song order={song.order} title={song.title} />
               ))
             ) : (
-              <li class="list-none italic">No setlist recorded for this show.</li>
+              <li class="list-none italic">
+                No setlist recorded for this show.
+              </li>
             )
           }
         </ol>

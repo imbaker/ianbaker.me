@@ -24,6 +24,10 @@ Inside of your Astro project, you'll see the following folders and files:
 └── tsconfig.json
 ```
 
+## Commits
+
+Commits to the Git repo should have prefixes that are inline with the Conventional Commits specification (https://www.conventionalcommits.org/en/v1.0.0/#specification)
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
@@ -35,4 +39,4 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm dev`              | Starts local dev server at `localhost:4321` |
 | `pnpm up`               | Upgrade packages                            |
 | `pnpm check`            | Run astro check                             |
-| `pnpm lint`            | Run eslint                                  |
+| `pnpm lint`             | Run eslint                                  |

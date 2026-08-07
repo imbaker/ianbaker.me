@@ -1,42 +1,55 @@
-# https://ianbaker.me
+# ianbaker.me
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0202f3dd-fb31-46fb-9c79-dc206e92b3da/deploy-status)](https://app.netlify.com/projects/amazing-babbage-3a2da9/deploys)
 
-## 🚀 Project Structure
+A personal Astro site built with Tailwind CSS, Astro Content Collections, and Playwright smoke tests.
 
-Inside of your Astro project, you'll see the following folders and files:
+## 📁 Project structure
 
 ```
 ├── public/
 ├── src/
-│   ├── components/
-│   ├── content/
-│       └── data/
-│   ├── layouts/
-│   ├── pages/
-│   ├── scripts/
-│   ├── styles/
-│   └── types/
+│   ├── components/
+│   ├── content/
+│   │   └── data/
+│   ├── layouts/
+│   ├── pages/
+│   ├── scripts/
+│   ├── styles/
+│   └── types/
 ├── tests/
 ├── astro.config.mjs
-├── README.md
 ├── package.json
-└── tsconfig.json
+├── pnpm-lock.yaml
+├── tsconfig.json
+└── README.md
 ```
 
-## Commits
+## 🔧 What’s included
 
-Commits to the Git repo should have prefixes that are inline with the Conventional Commits specification (https://www.conventionalcommits.org/en/v1.0.0/#specification)
+- Astro static site using `astro` and `@astrojs/sitemap`
+- Tailwind CSS configured with `@tailwindcss/vite`
+- Content stored in `src/content/data/concerts.json`
+- Reusable components in `src/components/`
+- Playwright smoke tests in `tests/smoke.spec.ts` configured for `chromium`, `firefox`, `webkit`, and a `Pixel 8` mobile profile
+- ESLint, Prettier, and commitlint for quality checks
 
-## 🧞 Commands
+## 🚀 Available commands
 
-All commands are run from the root of the project, from a terminal:
+Run from the repository root.
 
-| Command                 | Action                                      |
-| :---------------------- | :------------------------------------------ |
-| `pnpm install`          | Installs dependencies                       |
-| `pnpm add -D <package>` | Installs dev dependencies                   |
-| `pnpm dev`              | Starts local dev server at `localhost:4321` |
-| `pnpm up`               | Upgrade packages                            |
-| `pnpm check`            | Run astro check                             |
-| `pnpm lint`             | Run eslint                                  |
+| Command                        | Action                                            |
+| :----------------------------- | :------------------------------------------------ |
+| `pnpm install`                 | Install dependencies                              |
+| `pnpm dev`                     | Start local dev server at `http://localhost:4321` |
+| `pnpm build`                   | Build the site for production                     |
+| `pnpm preview`                 | Preview the production build locally              |
+| `pnpm lint`                    | Run ESLint across the repo                        |
+| `pnpm check`                   | Run Astro type and project checks                 |
+| `pnpm test`                    | Run Playwright tests                              |
+| `pnpm up`                      | Upgrade Astro dependencies via `@astrojs/upgrade` |
+| `pnpm exec prettier --write .` | Format files with Prettier                        |
+
+## ✅ Commit conventions
+
+Use Conventional Commits prefixes for Git history, e.g. `feat:`, `fix:`, `chore:`, `docs:`.

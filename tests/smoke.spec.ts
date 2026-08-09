@@ -1,5 +1,7 @@
 import { test, expect } from "@playwright/test";
 
+const currentYear = new Date().getFullYear().toString();
+
 test("home page loads successfully", async ({ page }) => {
   const response = await page.goto("/");
   expect(response?.status()).toBe(200);
@@ -61,6 +63,20 @@ test("theme toggle switches between light and dark", async ({ page }) => {
 
   await expect.poll(isDark).toBe(false);
   await expect(button).toHaveAttribute("aria-label", "Switch to dark mode");
+});
+
+test("footer exists once, is visible and contains the current year", async ({
+  page,
+}, testInfo) => {
+  await page.goto("/");
+
+  const footer = page.locator("footer");
+
+  testInfo.annotations.push({ type: "currentYear", description: currentYear });
+
+  await expect(footer).toHaveCount(1);
+  await expect(footer).toBeVisible();
+  await expect(footer).toContainText(currentYear);
 });
 
 test("page has no CSP violations", async ({ page }) => {

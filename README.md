@@ -2,7 +2,7 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/0202f3dd-fb31-46fb-9c79-dc206e92b3da/deploy-status)](https://app.netlify.com/projects/amazing-babbage-3a2da9/deploys)
 
-A personal Astro site built with Tailwind CSS, Astro Content Collections, and Playwright smoke tests.
+A personal Astro site built with Tailwind CSS, Astro Content Collections, and Playwright smoke tests. Displays current concert attendance data.
 
 ## 📁 Project structure
 
@@ -29,7 +29,8 @@ A personal Astro site built with Tailwind CSS, Astro Content Collections, and Pl
 
 - Astro static site using `astro` and `@astrojs/sitemap`
 - Tailwind CSS configured with `@tailwindcss/vite`
-- Content stored in `src/content/data/concerts.json`
+- TypeScript for type-safe development
+- Content stored in `src/content/data/concerts.json` and accessed via Content Collections
 - Reusable components in `src/components/`
 - Playwright smoke tests in `tests/smoke.spec.ts` configured for `chromium`, `firefox`, `webkit`, and a `Pixel 8` mobile profile
 - ESLint, Prettier, and commitlint for quality checks

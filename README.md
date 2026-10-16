@@ -1,6 +1,6 @@
 # ianbaker.me
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0202f3dd-fb31-46fb-9c79-dc206e92b3da/deploy-status)](https://app.netlify.com/projects/amazing-babbage-3a2da9/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0202f3dd-fb31-46fb-9c79-dc206e92b3da/deploy-status)](https://app.netlify.com/projects/amazing-babbage-3a2da9/deploys) [![Better Stack Badge](https://incidents.betterstack.com/status-badges/v2/monitor/1ol9n.svg)](https://incidents.betterstack.com/?utm_source=status_badge)
 
 A personal Astro site built with Tailwind CSS, Astro Content Collections, and Playwright smoke tests. Displays current concert attendance data.
 

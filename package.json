@@ -21,6 +21,9 @@
     "astro": "^7.3.8",
     "tailwindcss": "^4.3.3"
   },
+  "engines": {
+    "node": "^24.22.0"
+  },
   "packageManager": "pnpm@12.11.2",
   "devDependencies": {
     "@commitlint/cli": "^21.2.3",
